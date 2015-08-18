@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C006f01c81a24%24fe8d3130%24a60aa8c0%40pcsven%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000011.html">
+   <LINK REL="Next"  HREF="000013.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems</H1>
+    <B>Sven Borgstr&#246;m</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C006f01c81a24%24fe8d3130%24a60aa8c0%40pcsven%3E"
+       TITLE="[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems">sven at ov.ingv.it
+       </A><BR>
+    <I>Mon Oct 29 13:12:36 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000011.html">[Radartools-users] Fw:  IDIOT - baseline value problems
+</A></li>
+        <LI>Next message: <A HREF="000013.html">[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Andreas,
+
+just now I've finished to upload on your ftp the two *.N1 files of the SAR 
+scenes
+
+31-03-2005;
+16-11-2006;
+(desc. - 17 m b perp.).
+
+If you have time to process the data, I want to thank you in advance.
+
+In this case, you need also the *.hgt SRTM3 files to subtract topography; 
+the ones I'm using, covering all my area of interest, are:
+
+N40E013
+N40E014
+N40E015
+N40E016
+N41E013
+N41E014
+N41E015
+N41E016
+
+Do yuo want me to upload on your ftp directly the unzipped files?
+
+I'm at your disposal for anything you need so in case let me know.
+
+Thanks again.
+Sven.
+
+P.S.: If everything goes well, you should get about two fringes somewhere 
+close to the coastline, at the west (in REAL, not SAR geometry) of Mt. 
+Vesuvius: I know it as I have also other geodetical (mainly GPS and 
+leveling) data of the area.
+
+
+----- Original Message ----- 
+From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+Sent: Friday, October 26, 2007 1:07 PM
+Subject: Re: [Radartools-users] Fw: IDIOT - baseline value problems
+
+
+&gt;<i> Hi Sven,
+</I>&gt;<i>
+</I>&gt;&gt;<i> FIRST PAIR (asc) - FULL SCENE: unlike the first time when I wrote to the
+</I>&gt;&gt;<i> do you think this could be related to coregistration problems?
+</I>&gt;<i>
+</I>&gt;<i> Yes and no. The coregistration in idiot is performed entirely using the 
+</I>&gt;<i> orbit
+</I>&gt;<i> information and obviously something goes wrong here.
+</I>&gt;<i>
+</I>&gt;&gt;<i> SECOND PAIR (desc) - FULL SCENE: Idiot stops giving always the same error
+</I>&gt;&gt;<i> message (exceeding critical baseline) processing a SAR pair which has a b
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Something strange happens also when using my Windows partition, where I
+</I>&gt;&gt;<i> this OS, my question is: &quot;Is the problem really related to getorb, as I
+</I>&gt;&gt;<i> don't use it under Windows?&quot;
+</I>&gt;<i>
+</I>&gt;<i> This was a good idea, and I think you're right. getorb can't be the 
+</I>&gt;<i> problem.
+</I>&gt;<i> So it must be definetly an error in idiot.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Last but not least, about sub-scenes: for both SAR pairs and processing
+</I>&gt;&gt;<i> them under both Fedora and Windows, Idiot is not able to process data,
+</I>&gt;&gt;<i> giving a READU error message and quitting immediately.
+</I>&gt;<i>
+</I>&gt;<i> As I said, idiot requires standard ENVISAT files. Cropping them usually
+</I>&gt;<i> changes the formating and idiot is not able to use them anymore. This is
+</I>&gt;<i> normal.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Granted that I can be wrong somewhere using Idiot, do you have more
+</I>&gt;&gt;<i> suggestions? If you want (and if you also have time, of course) I could 
+</I>&gt;&gt;<i> send
+</I>&gt;&gt;<i> you the data of one pair via FTP, just for a test. What do you think?
+</I>&gt;<i>
+</I>&gt;<i> You should not be able to do something wrong with idiot :-). Its concept 
+</I>&gt;<i> is to
+</I>&gt;<i> be totally simple. I think there is a bug somewhere which I should 
+</I>&gt;<i> correct.
+</I>&gt;<i> If possible, could you please upload the second pair (the one with 
+</I>&gt;<i> 'baseline
+</I>&gt;<i> too large) to our ftp (<A HREF="ftp://ftp.fpk.tu-berlin.de/incoming">ftp://ftp.fpk.tu-berlin.de/incoming</A>) and I'll see 
+</I>&gt;<i> what
+</I>&gt;<i> I can do. If you want I can also have a look on the first pair, but maybe
+</I>&gt;<i> lets start with the big problem...
+</I>&gt;<i>
+</I>&gt;<i> Don't worry about writing email, your input is really important for us!
+</I>&gt;<i>
+</I>&gt;<i> Greetings,
+</I>&gt;<i> Anderl
+</I>&gt;<i>
+</I>&gt;<i> P.S.: The incoming directory on our ftp is read protected, so nobody can
+</I>&gt;<i> download from there.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> ----------------------------------------------------------------
+</I>&gt;<i> Dr. Andreas Reigber           Berlin University of Technology
+</I>&gt;<i>                              Computer Vision and Remote Sensing
+</I>&gt;<i> Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+</I>&gt;<i> Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+</I>&gt;<i> ----------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Use encrypted email!                       My key ID: 0x279F93EB
+</I>&gt;<i> Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000011.html">[Radartools-users] Fw:  IDIOT - baseline value problems
+</A></li>
+	<LI>Next message: <A HREF="000013.html">[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#12">[ date ]</a>
+              <a href="thread.html#12">[ thread ]</a>
+              <a href="subject.html#12">[ subject ]</a>
+              <a href="author.html#12">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

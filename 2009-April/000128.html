@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] unwrapped interferogram values
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-April/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20unwrapped%20interferogram%20values&In-Reply-To=%3Cd6a8b87d0904240254k14a2be08wd4c9af04b46f0b7%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000126.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] unwrapped interferogram values</H1>
+    <B>Maxim Neumann</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20unwrapped%20interferogram%20values&In-Reply-To=%3Cd6a8b87d0904240254k14a2be08wd4c9af04b46f0b7%40mail.gmail.com%3E"
+       TITLE="[Radartools-users] unwrapped interferogram values">maxn at cs.tu-berlin.de
+       </A><BR>
+    <I>Fri Apr 24 11:54:51 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000126.html">[Radartools-users] RAT processes ENVISAT ASAR AP MODE PRODUCTS
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#128">[ date ]</a>
+              <a href="thread.html#128">[ thread ]</a>
+              <a href="subject.html#128">[ subject ]</a>
+              <a href="author.html#128">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Waleed,
+
+In simple terms, to obtain height information from the interferometric phase
+you need to scale it (after range filtering, etc.) with the reciprocal of
+the vertical wavenumber (kz):
+relative height = phase / kz
+kz is given by the acquisition system geometry:
+kz = 2 k0 Bp / (r0 sin(inc))
+where k0 is the wavenumber, Bp is the perpendicular baseline, r0 the range
+distance, inc the incidence angle.
+Concerning the errors with rat: probably you are not in the main rat
+directory, and because of this idl cannot find the functions. Hence, change
+to this directory, e.g. with the idl command &quot;cd&quot;:
+idl&gt;   cd, &quot;MainRatDir&quot;
+
+Regards,
+Maxim
+
+
+
+On Fri, Apr 24, 2009 at 8:31 AM, Walid Elmarimi &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">walid_elmarimi at yahoo.com</A>&gt;wrote:
+
+&gt;<i> Hi Maxim,
+</I>&gt;<i> first: Still couldn't figure out the scale with the wavenumber,
+</I>&gt;<i> second: I made a few simple customizations on RAT using IDL, but couldn't
+</I>&gt;<i> figure out how to compile the source code. Here's what I've been fiddling
+</I>&gt;<i> with:
+</I>&gt;<i> opened rat.pro and then entered .r rat.pro in the IDL command line. I get
+</I>&gt;<i> errors stating &quot;can't open compile.pro  can't open gui/xxxx.pro .....&quot;
+</I>&gt;<i> Please help, thank you.
+</I>&gt;<i>
+</I>&gt;<i> Waleed Elmarimi
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i> *From:* Maxim Neumann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+</I>&gt;<i> *To:* <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">welmarimi at my.bcit.ca</A>
+</I>&gt;<i> *Cc:* <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+</I>&gt;<i> *Sent:* Thursday, April 9, 2009 1:02:14 AM
+</I>&gt;<i> *Subject:* Re: [Radartools-users] unwrapped interferogram values
+</I>&gt;<i>
+</I>&gt;<i> Hi Waleed,
+</I>&gt;<i>
+</I>&gt;<i> according to the code, you get back the &quot;unwrapped phase&quot;, i.e. a real
+</I>&gt;<i> value which is not bound to [-pi, pi]. It is a relative phase offset with
+</I>&gt;<i> respect to the lowest value in the image which is set to 0.
+</I>&gt;<i> If you want to know the topographic variations in meters, you need to scale
+</I>&gt;<i> with the wavenumber.
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Maxim
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Thu, Apr 9, 2009 at 12:07 AM, &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">welmarimi at my.bcit.ca</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Hi RAT users,
+</I>&gt;&gt;<i> I unwrapped an interferogram created from an insar pair. What does this
+</I>&gt;&gt;<i> represent?
+</I>&gt;&gt;<i> When using the following tool: General-&gt;measure value/location , what are
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i> values that show up when hovering with the mouse over the unwrapped?
+</I>&gt;&gt;<i> Please help ASAP, thank you.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Waleed
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Radartools-users mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20090424/c1104de3/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20090424/c1104de3/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000126.html">[Radartools-users] RAT processes ENVISAT ASAR AP MODE PRODUCTS
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#128">[ date ]</a>
+              <a href="thread.html#128">[ thread ]</a>
+              <a href="subject.html#128">[ subject ]</a>
+              <a href="author.html#128">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

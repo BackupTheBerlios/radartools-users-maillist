@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Covariance matrix: what can I use it for?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Covariance%20matrix%3A%20what%20can%20I%20use%20it%20for%3F&In-Reply-To=%3Cd6a8b87d0711260045x4b96edd5m40086300d6275d64%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000028.html">
+   <LINK REL="Next"  HREF="000030.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Covariance matrix: what can I use it for?</H1>
+    <B>Maxim Neumann</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Covariance%20matrix%3A%20what%20can%20I%20use%20it%20for%3F&In-Reply-To=%3Cd6a8b87d0711260045x4b96edd5m40086300d6275d64%40mail.gmail.com%3E"
+       TITLE="[Radartools-users] Covariance matrix: what can I use it for?">maxn at cs.tu-berlin.de
+       </A><BR>
+    <I>Mon Nov 26 09:45:54 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000028.html">[Radartools-users] Covariance matrix: what can I use it for?
+</A></li>
+        <LI>Next message: <A HREF="000030.html">[Radartools-users] File size question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Daniel,
+
+at first, in the name of all developers, thank you for your nice
+words, it's always motivating.
+
+I am not at all a specialist for geology or volcanic conduits. I just
+want to give some ideas for your task using RAT Polarimetry, and
+perhaps somebody else can help you more.
+
+In general, the covariance matrix represents the statistics
+(second-order) of your data. Presuming sums up neighboring pixels into
+one. That is, it determines the spatial resolution of your data (after
+covariance matrix generation), and the number of independent looks
+(samples).
+For example, giving the values of 4 for azimuth and 2 for range will
+result in a resolution of 18m x 20m = 360m^2, and every pixel will
+have 8 looks. The higher the number of looks over homogeneous areas,
+the better and more reliable are the statistics and the better is the
+estimation of the true covariance matrix which represents best your
+data. Additionally, you can apply speckle filters (whom do not reduce
+the image size) to obtain more looks and get more smooth images.
+
+Since you work with natural media you'll probably need a lot of looks,
+either you want to use the backscattering coefficients or the whole
+covariance matrices.
+
+You may consider different kinds of polarimetric decompositions to see
+either they are sensitive to the parameters which you are interested
+in.
+One is the Entropy-Alpha-Anisotropy decomposition (developed, btw, at
+your university, in Nantes). Entropy gives you the entropy of the
+scattering mechanisms, the alpha-angle can be related to the
+scattering mechanism type, and anisotropy gives you information about
+secondary scattering mechanisms.
+But consider also to use the Freeman-Durden (Surface-Volume-Double
+Bounce), or the Sphere-Diplane-Helix decompositions, for example.
+You can also try to use the classification methods (H/a and H/a/A
+segmentations, Lee category preserving, physical, Wishart, etc.) and
+see either they can distinguish between the different media which you
+have in the data.
+
+Best regards,
+Maxim
+
+On Nov 23, 2007 6:56 PM, daniel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">daniel.mege at univ-nantes.fr</A>&gt; wrote:
+&gt;<i> Dear RAT users,
+</I>&gt;<i>
+</I>&gt;<i> In spite of my very limited SAR processing skills, I find RAT pretty
+</I>&gt;<i> easy to use,
+</I>&gt;<i> and (given this is my first participation to the list) I would like
+</I>&gt;<i> first to warmly thank
+</I>&gt;<i> the developers for such a nice, nice work made available to everyone,
+</I>&gt;<i> which gives
+</I>&gt;<i> to non-SAR specialists the feeling that they are clever enough to master
+</I>&gt;<i> what
+</I>&gt;<i> only a tiny fraction of human beings can actually understand.
+</I>&gt;<i>
+</I>&gt;<i> I am not Jedi Master Yoda though, and I have a question about the
+</I>&gt;<i> covariance matrix.
+</I>&gt;<i> I am working with PALSAR data and I am interested in using the various
+</I>&gt;<i> polarization modes available (I have both SLC and ML images) to retrieve
+</I>&gt;<i> which
+</I>&gt;<i> properties of linear volcanic conduits observed at surface are actually
+</I>&gt;<i> observed.
+</I>&gt;<i> These geologic features may be observed due to their topography, the
+</I>&gt;<i> specific
+</I>&gt;<i> vegetation they are associated to, or water channelling along them. For
+</I>&gt;<i> the moment, what I do is trying to interpret the various polarization modes
+</I>&gt;<i> separately, as a function of what I have found on books or promotional
+</I>&gt;<i> materials
+</I>&gt;<i> of space agencies (HH is more sensible to humidity than VV etc.). My two
+</I>&gt;<i> questions are :
+</I>&gt;<i>
+</I>&gt;<i> - Using RAT, I can readily get a covariance matrix. The covariance
+</I>&gt;<i> matrix image is great.
+</I>&gt;<i> I have tried to understand what a covariance matrix can be used to. I
+</I>&gt;<i> have found tens
+</I>&gt;<i> (tons) of papers with lots of mathematics in it but none appears to
+</I>&gt;<i> answer the question of
+</I>&gt;<i> what I can do with that. As a 3*3 matrix, I guess it contains plenty of
+</I>&gt;<i> useful numbers, but
+</I>&gt;<i> what are the relationships with what I see on the ground? How can I
+</I>&gt;<i> relate the matrix with
+</I>&gt;<i> something useful for humidity, rugosity etc.?
+</I>&gt;<i>
+</I>&gt;<i> - During processing I was also asked for presumming. Although I have
+</I>&gt;<i> also tried to
+</I>&gt;<i> understand which numbers I am to report there, what I am asked for is
+</I>&gt;<i> still pretty obscure.
+</I>&gt;<i> Does it depend on the azimuth/range resolution ratio? The images have a
+</I>&gt;<i> resolution of
+</I>&gt;<i> 4.5 meters in azimuth, and 10 meters in range. Am I to respond 1 for
+</I>&gt;<i> azimuth and
+</I>&gt;<i> 2.2 (=10/4.5) for range ?
+</I>&gt;<i>
+</I>&gt;<i> Thanks for your help !
+</I>&gt;<i> daniel
+</I>&gt;<i>
+</I>&gt;<i> Daniel Mege
+</I>&gt;<i> Planetary Geology and Geodynamics Lab
+</I>&gt;<i> University of Nantes, France
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000028.html">[Radartools-users] Covariance matrix: what can I use it for?
+</A></li>
+	<LI>Next message: <A HREF="000030.html">[Radartools-users] File size question
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#29">[ date ]</a>
+              <a href="thread.html#29">[ thread ]</a>
+              <a href="subject.html#29">[ subject ]</a>
+              <a href="author.html#29">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw: Fw: Fw:	IDIOT-baselinevalueproblems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%0A%09IDIOT-baselinevalueproblems&In-Reply-To=%3C001201c825e5%24194945b0%24a60aa8c0%40pcsven%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000024.html">
+   <LINK REL="Next"  HREF="000026.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw: Fw: Fw:	IDIOT-baselinevalueproblems</H1>
+    <B>Sven Borgstr&#246;m</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%20Fw%3A%0A%09IDIOT-baselinevalueproblems&In-Reply-To=%3C001201c825e5%24194945b0%24a60aa8c0%40pcsven%3E"
+       TITLE="[Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw: Fw: Fw:	IDIOT-baselinevalueproblems">sven at ov.ingv.it
+       </A><BR>
+    <I>Tue Nov 13 12:05:27 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000024.html">[Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw: Fw: IDIOT	-baselinevalueproblems
+</A></li>
+        <LI>Next message: <A HREF="000026.html">[Radartools-users] Slant to Ground range
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Andreas,
+you are very kind.
+Please take all the time you need and don't worry about me.
+For the moment I will use Idiot with descending data, as the results from 
+the Idiot processing are really satisfactory and match very well the 
+geodetical data of our networks.
+Regards,
+Sven.
+
+
+----- Original Message ----- 
+From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+Sent: Tuesday, November 13, 2007 11:02 AM
+Subject: Re: [Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw: Fw: 
+IDIOT-baselinevalueproblems
+
+
+Hi Sven,
+
+This time the data are mirrored in azimuth, but not in range. EV-APP seems 
+to
+do always try to have the data approximately with north up and east-west not
+mirrored. However, this is bad for idiot, because again the alignment 
+between
+data and DEM goes wrong. One result is the strange looking slave image, but
+of course this is only one of many bad effects.
+
+An azimuth mirror is more complicated to correct because I have to read the
+entire data backwards, not only the individual lines. Therefore I'll 
+probably
+need some time until I find a calm moment to work on this. It's not really
+hard to implement, but more than 3 lines to change - just be a bit 
+patient...
+
+Greetings,
+Andreas
+
+
+
+
+Am Montag 12 November 2007 schrieb Sven Borgstr&#246;m:
+&gt;<i> Hi Andreas,
+</I>&gt;<i>
+</I>&gt;<i> now I'm uploading a zip file on your ftp site
+</I>&gt;<i> (06-04-05_13-09-06_Asc_Sven.zip).
+</I>&gt;<i>
+</I>&gt;<i> Due to some problems with my Internet connection, I've also wrongly
+</I>&gt;<i> uploaded two files that can be safely deleted (06-04-05_13-09-06_Asc.zip
+</I>&gt;<i> and ASA_IMS_*.N1).
+</I>&gt;<i>
+</I>&gt;<i> Please, let me know if I can do something more for you and thank you again
+</I>&gt;<i> for spending your time with me.
+</I>&gt;<i>
+</I>&gt;<i> Sven.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----- Original Message -----
+</I>&gt;<i> From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+</I>&gt;<i> To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+</I>&gt;<i> Sent: Friday, November 09, 2007 6:30 PM
+</I>&gt;<i> Subject: Re: [Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw:
+</I>&gt;<i> IDIOT -baselinevalueproblems
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Hi Sven,
+</I>&gt;<i>
+</I>&gt;<i> &gt; &quot;Program caused arithmetic error: Floating divide by 0&quot;
+</I>&gt;<i>
+</I>&gt;<i> This is normal when programming IDL and usually no problem.
+</I>&gt;<i>
+</I>&gt;<i> I think again something is going wrong with the geometry, probably due to
+</I>&gt;<i> your
+</I>&gt;<i> slightly different data format. Again I can only try to help if you upload
+</I>&gt;<i> one example. Please send me also the png of the image amplitudes, probably
+</I>&gt;<i> I can guess from them what is happing. I should have at least some time
+</I>&gt;<i> next week to check the data.
+</I>&gt;<i>
+</I>&gt;<i> Best regards,
+</I>&gt;<i> Anderl
+</I>&gt;<i>
+</I>&gt;<i> Am Freitag 09 November 2007 schrieb Sven Borgstr&#246;m:
+</I>&gt;<i> &gt; Hi Andreas,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; sorry for my late answer but I was out of the office for some days.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; As I told you, I've successfully processed a descending pair with 
+</I>&gt;<i> &gt; version
+</I>&gt;<i> &gt; 1.2 but I am always in trouble wit ascending pairs.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I tried with different pairs/scenes, in order to exclude eventual bad
+</I>&gt;<i> &gt; data,
+</I>&gt;<i> &gt; using both version 1.1 and 1.2, but getting always bad results.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I think this should be related to something during processing, because 
+</I>&gt;<i> &gt; at
+</I>&gt;<i> &gt; the end I always get this message:
+</I>&gt;<i> &gt; &quot;Program caused arithmetic error: Floating divide by 0&quot;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Pratically, when I look at the amplite slave image, this is just a 
+</I>&gt;<i> &gt; little
+</I>&gt;<i> &gt; piece of the whole image and this is why, I suppose, it is not able to
+</I>&gt;<i> &gt; retrieve anything afterwards.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; What do you suggest now?
+</I>&gt;<i> &gt; Thanks.
+</I>&gt;<i> &gt; Sven.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; ----- Original Message -----
+</I>&gt;<i> &gt; From: &quot;Sven Borgstr&#246;m&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">sven at ov.ingv.it</A>&gt;
+</I>&gt;<i> &gt; To: &quot;Radartools Users&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+</I>&gt;<i> &gt; Sent: Wednesday, October 31, 2007 5:41 PM
+</I>&gt;<i> &gt; Subject: [Radartools-users] Fw: Fw: Fw: Fw: Fw: IDIOT -
+</I>&gt;<i> &gt; baselinevalueproblems
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; &gt; Hi Andreas,
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; I've tested the Idiot 1.2 test version on the descending pair you have
+</I>&gt;<i> &gt; &gt; processed yesterday and everything was ok: I got your same results!
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; I've also processed an ascending pair but I didn't get good results: 
+</I>&gt;<i> &gt; &gt; as
+</I>&gt;<i> &gt; &gt; the
+</I>&gt;<i> &gt; &gt; data are the same I've already processed a few days ago
+</I>&gt;<i> &gt; &gt; (unsuccessfully),
+</I>&gt;<i> &gt; &gt; I
+</I>&gt;<i> &gt; &gt; think this is due, probably, to their bad quality.
+</I>&gt;<i> &gt; &gt; Anyway processing didn't stop, so I think it will work fine with good
+</I>&gt;<i> &gt; &gt; data.
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; In the next days I will get a different ascending pair to test and let
+</I>&gt;<i> &gt; &gt; you know.
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; Thanks again.
+</I>&gt;<i> &gt; &gt; Sven.
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; P.S.: the 1.2 version will work also with ERS1/2?
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; ----- Original Message -----
+</I>&gt;<i> &gt; &gt; From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+</I>&gt;<i> &gt; &gt; To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+</I>&gt;<i> &gt; &gt; Sent: Tuesday, October 30, 2007 4:53 PM
+</I>&gt;<i> &gt; &gt; Subject: Re: [Radartools-users] Fw: Fw: Fw: Fw: IDIOT - baseline
+</I>&gt;<i> &gt; &gt; valueproblems
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt;&gt; Well, I hope that the new version works for both ascending and
+</I>&gt;<i> &gt; &gt;&gt; descending data
+</I>&gt;<i> &gt; &gt;&gt; of EV-APP output. For 'normal' ESA data it alrady did so before, but
+</I>&gt;<i> &gt; &gt;&gt; now
+</I>&gt;<i> &gt; &gt;&gt; it
+</I>&gt;<i> &gt; &gt;&gt; is on
+</I>&gt;<i> &gt; &gt;&gt; you to tell me...
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt; If EV-APP does the transformations you described, for sure this is 
+</I>&gt;<i> &gt; &gt;&gt; the
+</I>&gt;<i> &gt; &gt;&gt; problem. It might simplify the interpretation for human users, but
+</I>&gt;<i> &gt; &gt;&gt; confuses
+</I>&gt;<i> &gt; &gt;&gt; the stupid computers...
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt;&gt; Coming to the results, you got very good results: you had about two
+</I>&gt;<i> &gt; &gt;&gt;&gt; fringes, and in that time span we measured about 4 cm displacement
+</I>&gt;<i> &gt; &gt;&gt;&gt; (uplift)
+</I>&gt;<i> &gt; &gt;&gt;&gt; from GPS and levelling data in the area (Phlegrean Fields).
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt; I don't know precisely to which area you refer. Just to be sure: You
+</I>&gt;<i> &gt; &gt;&gt; have to
+</I>&gt;<i> &gt; &gt;&gt; interpret the &quot;phase_dinsar&quot; file, not one of the other two. The
+</I>&gt;<i> &gt; &gt;&gt; &quot;phase&quot;
+</I>&gt;<i> &gt; &gt;&gt; file
+</I>&gt;<i> &gt; &gt;&gt; contains the pure InSAR phase, the &quot;phase_flat&quot; the phase excluding
+</I>&gt;<i> &gt; &gt;&gt; earth's
+</I>&gt;<i> &gt; &gt;&gt; curvature, but still including topography. In the &quot;phase_dinsar&quot; I 
+</I>&gt;<i> &gt; &gt;&gt; see
+</I>&gt;<i> &gt; &gt;&gt; only
+</I>&gt;<i> &gt; &gt;&gt; small effects...
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt; Greetings,
+</I>&gt;<i> &gt; &gt;&gt; Anderl
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt; --
+</I>&gt;<i> &gt; &gt;&gt; ----------------------------------------------------------------
+</I>&gt;<i> &gt; &gt;&gt; Dr. Andreas Reigber           Berlin University of Technology
+</I>&gt;<i> &gt; &gt;&gt;                              Computer Vision and Remote Sensing
+</I>&gt;<i> &gt; &gt;&gt; Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+</I>&gt;<i> &gt; &gt;&gt; Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+</I>&gt;<i> &gt; &gt;&gt; ----------------------------------------------------------------
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt; Use encrypted email!                       My key ID: 0x279F93EB
+</I>&gt;<i> &gt; &gt;&gt; Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt;
+</I>&gt;<i> &gt; &gt;&gt; _______________________________________________
+</I>&gt;<i> &gt; &gt;&gt; Radartools-users mailing list
+</I>&gt;<i> &gt; &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; &gt; _______________________________________________
+</I>&gt;<i> &gt; &gt; Radartools-users mailing list
+</I>&gt;<i> &gt; &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Radartools-users mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+-- 
+----------------------------------------------------------------
+Dr. Andreas Reigber           Berlin University of Technology
+                              Computer Vision and Remote Sensing
+Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+----------------------------------------------------------------
+
+Use encrypted email!                       My key ID: 0x279F93EB
+Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+
+
+_______________________________________________
+Radartools-users mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A> 
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000024.html">[Radartools-users] Fw: Fw: Fw: Fw: Fw: Fw: Fw: IDIOT	-baselinevalueproblems
+</A></li>
+	<LI>Next message: <A HREF="000026.html">[Radartools-users] Slant to Ground range
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#25">[ date ]</a>
+              <a href="thread.html#25">[ thread ]</a>
+              <a href="subject.html#25">[ subject ]</a>
+              <a href="author.html#25">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

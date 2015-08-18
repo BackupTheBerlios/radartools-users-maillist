@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] add to Moriyama decomposition
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20add%20to%20Moriyama%20decomposition&In-Reply-To=%3C200710221430.02564.anderl%40fpk.tu-berlin.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000006.html">
+   <LINK REL="Next"  HREF="000008.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] add to Moriyama decomposition</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20add%20to%20Moriyama%20decomposition&In-Reply-To=%3C200710221430.02564.anderl%40fpk.tu-berlin.de%3E"
+       TITLE="[Radartools-users] add to Moriyama decomposition">anderl at fpk.tu-berlin.de
+       </A><BR>
+    <I>Mon Oct 22 14:30:02 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000006.html">[Radartools-users] add to Moriyama decomposition
+</A></li>
+        <LI>Next message: <A HREF="000008.html">[Radartools-users] IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Tumen,
+
+Did you speckle filter your covariances before performing the Moriyama 
+decomposition? If not, i.e. if the covariances are singular, strange results 
+might occur.
+
+Please use &quot;General-&gt;Presumming&quot; with at least 4x4, or &quot;PolSAR-&gt;Speckle 
+Filtering&quot; with a 5x5 or 7x7 box. If then the problem is still present, let 
+us know...
+
+Good luck,
+Andreas
+
+
+
+
+Am Samstag 20 Oktober 2007 schrieb Tumen N. Chymitdorzhiev:
+&gt;<i> Dear, Radartools-users!
+</I>&gt;<i>
+</I>&gt;<i> We used Moriyama, Freemans-Durden, sphere-diplane-helix decompositions in
+</I>&gt;<i> RAT for ALOS data.
+</I>&gt;<i> 1. May be that volume component of Moriyama decomposition  changed on
+</I>&gt;<i> surface component and surface changed on volume in RAT? May be error in
+</I>&gt;<i> RAT? 2. Why extracted Double bounce channel of Moriyama decomposition is
+</I>&gt;<i> full black?
+</I>&gt;<i>
+</I>&gt;<i> Tumen Chymitdorzhiev
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+-- 
+----------------------------------------------------------------
+Dr. Andreas Reigber           Berlin University of Technology
+                              Computer Vision and Remote Sensing
+Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+----------------------------------------------------------------
+
+Use encrypted email!                       My key ID: 0x279F93EB
+Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000006.html">[Radartools-users] add to Moriyama decomposition
+</A></li>
+	<LI>Next message: <A HREF="000008.html">[Radartools-users] IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

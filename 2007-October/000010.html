@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Fw:  IDIOT - baseline value problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C001201c817c3%24e0ebf200%24a60aa8c0%40pcsven%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000009.html">
+   <LINK REL="Next"  HREF="000011.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Fw:  IDIOT - baseline value problems</H1>
+    <B>Sven Borgstr&#246;m</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C001201c817c3%24e0ebf200%24a60aa8c0%40pcsven%3E"
+       TITLE="[Radartools-users] Fw:  IDIOT - baseline value problems">sven at ov.ingv.it
+       </A><BR>
+    <I>Fri Oct 26 13:32:23 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000009.html">[Radartools-users] IDIOT - baseline value problems
+</A></li>
+        <LI>Next message: <A HREF="000011.html">[Radartools-users] Fw:  IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Andreas,
+
+following your suggestion, I verified the getorb tool, for both the path 
+pointing to the directory containing the Orbital Data Records and the one 
+containig the executable file and everything seems to be ok.
+
+Then I riprocessed my data (one ascending pair, b perp. 74 m + one 
+descending, b perp. 17 m, about 1.5 years time span for both) and I got 
+this:
+
+FIRST PAIR (asc) - FULL SCENE: unlike the first time when I wrote to the 
+Radartools mailing list, the program didn't stop, but I got very bad 
+results.
+The preliminary visual inspection of the SAR focusing output (via Open-EV, 
+after using EV-APP) for both master and slave seems to be good: do you think 
+this could be related to coregistration problems?
+
+SECOND PAIR (desc) - FULL SCENE: Idiot stops giving always the same error 
+message (exceeding critical baseline) processing a SAR pair which has a b 
+perp. value (17 m) lesser than the one of the previous pair (74 m) in which 
+processing was completed (?!?).
+Looking at the Linux shell, the program stops (at this time you can 
+continue, but skipping the interferometric processing) a little while after 
+reading the second orbit file:
+.................
+getorb: reading arclist .................
+getorb: orbit file ........ (first ODR)
+getorb: reading arclist ..................
+getorb: orbit file ... (second ODR)
+
+Something strange happens also when using my Windows partition, where I 
+installed Idiot just for test, but WITHOUT using the getorb tool, as no 
+versions exist - at least, as I know - compiled for Windows.
+As I got always the &quot;critical baseline exceeded&quot; error message also under 
+this OS, my question is: &quot;Is the problem really related to getorb, as I 
+don't use it under Windows?&quot;
+
+Last but not least, about sub-scenes: for both SAR pairs and processing them 
+under both Fedora and Windows, Idiot is not able to process data, giving a 
+READU error message and quitting immediately.
+
+Granted that I can be wrong somewhere using Idiot, do you have more 
+suggestions?
+If you want (and if you also have time, of course) I could send you the data 
+of one pair via FTP, just for a test. What do you think?
+
+Sorry for my endless mail.
+Regards,
+Sven.
+
+----- Original Message ----- 
+From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+Sent: Thursday, October 25, 2007 8:26 AM
+Subject: Re: [Radartools-users] IDIOT - baseline value problems
+
+
+&gt;<i> Hi Sven,
+</I>&gt;<i>
+</I>&gt;<i> The only idea I have is that getorb has problems finding it orbit files. 
+</I>&gt;<i> In
+</I>&gt;<i> the preprocessing the data header information is used (which seems to be 
+</I>&gt;<i> ok),
+</I>&gt;<i> but later the getorb output is used (which seem to be wrong). Are you sure
+</I>&gt;<i> that getorb is working fine? Is the path to the orb-Files correct?
+</I>&gt;<i>
+</I>&gt;<i> If this doesn't help, there is maybe a bug in Idiot... Strange, because 
+</I>&gt;<i> all
+</I>&gt;<i> pairs I processed up to now work fine. It will be hard to locate the 
+</I>&gt;<i> precise
+</I>&gt;<i> error without having the data and test it. In this case I can only help if
+</I>&gt;<i> you can upload one problematic data pair for testing...
+</I>&gt;<i>
+</I>&gt;&gt;<i> dimension of the scene? Is it possible to process also a sub-scene, not
+</I>&gt;&gt;<i> only the full one?
+</I>&gt;<i>
+</I>&gt;<i> Yes. Idiot is fully automatic and relies on the formating of original 
+</I>&gt;<i> Envisat
+</I>&gt;<i> data sets. Up to now cropping is not included.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Please, consider I'm just a user (moreover, new to IDIOT!), not a SAR
+</I>&gt;&gt;<i> specialist.
+</I>&gt;<i>
+</I>&gt;<i> Perfect! This is the origin of the name &quot;idiot&quot; - it is not made for
+</I>&gt;<i> specialists but for all the poor users who just want an interferogram...
+</I>&gt;<i>
+</I>&gt;<i> Greetings,
+</I>&gt;<i> Andreas
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> ----------------------------------------------------------------
+</I>&gt;<i> Dr. Andreas Reigber           Berlin University of Technology
+</I>&gt;<i>                              Computer Vision and Remote Sensing
+</I>&gt;<i> Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+</I>&gt;<i> Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+</I>&gt;<i> ----------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Use encrypted email!                       My key ID: 0x279F93EB
+</I>&gt;<i> Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000009.html">[Radartools-users] IDIOT - baseline value problems
+</A></li>
+	<LI>Next message: <A HREF="000011.html">[Radartools-users] Fw:  IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

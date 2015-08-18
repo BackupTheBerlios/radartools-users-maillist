@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] [ASK] Two registered polarimetric dataset
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20%5BASK%5D%20Two%20registered%20polarimetric%20dataset&In-Reply-To=%3C89E917B3171CC447A649F1869CEB1B2627C0DF%40exbe5.intra.dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000135.html">
+   <LINK REL="Next"  HREF="000137.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] [ASK] Two registered polarimetric dataset</H1>
+    <B>Andreas.Reigber at dlr.de</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20%5BASK%5D%20Two%20registered%20polarimetric%20dataset&In-Reply-To=%3C89E917B3171CC447A649F1869CEB1B2627C0DF%40exbe5.intra.dlr.de%3E"
+       TITLE="[Radartools-users] [ASK] Two registered polarimetric dataset">Andreas.Reigber at dlr.de
+       </A><BR>
+    <I>Thu Jul 23 17:27:23 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000135.html">[Radartools-users] [ASK] Two registered polarimetric dataset
+</A></li>
+        <LI>Next message: <A HREF="000137.html">[Radartools-users] [ASK] Two registered polarimetric dataset
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#136">[ date ]</a>
+              <a href="thread.html#136">[ thread ]</a>
+              <a href="subject.html#136">[ subject ]</a>
+              <a href="author.html#136">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Yes, for PolInSAR you need two data sets which are coregistrated. In RAT, you'll need to do InSAR first on each pair of polarisation (HH1-HH2, VV1-VV2, etc.). This mean to split the data into the different channels, combine monopolar combinations as InSAR pairs, coregister them, split them again to save the coregistered slave, and to recombine the 4 coregistered slave channels again into a PolSAR vector.
+
+I know that this is very very complicated and also a bit time consuming. But up to now, nobody implemented a better approach....
+
+Regards,
+Andreas
+
+
+
+------------------------------------------------------------
+Dr. Andreas Reigber          German Aerospace Center (DLR)
+                             Microwaves and Radar Institute
+Tel.: ++49-815328-2360       SAR Technology Department
+Fax.: ++49-815328-1449       P.O. Box 1116
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   D-82230 Wessling, Germany
+------------------------------------------------------------ 
+  
+
+&gt;<i> -----Urspr&#252;ngliche Nachricht-----
+</I>&gt;<i> Von: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users-bounces at lists.berlios.de</A> 
+</I>&gt;<i> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users-bounces at lists.berlios.de</A>] Im Auftrag 
+</I>&gt;<i> von Firman Hadi
+</I>&gt;<i> Gesendet: Mittwoch, 22. Juli 2009 08:49
+</I>&gt;<i> An: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+</I>&gt;<i> Betreff: [Radartools-users] [ASK] Two registered polarimetric dataset
+</I>&gt;<i> 
+</I>&gt;<i> Dear all,
+</I>&gt;<i> 
+</I>&gt;<i> I am trying to implement Polinsar with ERSDAC Vexcel using RAT 0.21.
+</I>&gt;<i> According to the paper &quot;Polinsar Data Processing with RAT 
+</I>&gt;<i> (Radar Tools)&quot;, Polinsar can only be implemented for two 
+</I>&gt;<i> already co-registered polarimetric data sets.
+</I>&gt;<i> 
+</I>&gt;<i> I am still confuse about the term of two already 
+</I>&gt;<i> co-registered dataset. Do I have to carry out InSAR first? Or 
+</I>&gt;<i> do I just straight make MB-Polinsar? I
+</I>&gt;<i> 
+</I>&gt;<i> Thank you.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 	
+</I>&gt;<i> 	
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Firman Hadi
+</I>&gt;<i> Center for Remote Sensing - ITB
+</I>&gt;<i> Jl. Ganesha No. 10, 3rd Floor
+</I>&gt;<i> Bandung - 40132
+</I>&gt;<i> INDONESIA
+</I>&gt;<i> Phone: +62-22-2530701
+</I>&gt;<i> Fax: +62-22-2530702
+</I>&gt;<i> Website : <A HREF="http://crs.itb.ac.id">http://crs.itb.ac.id</A> &lt;<A HREF="http://crs.itb.ac.id/">http://crs.itb.ac.id/</A>&gt;  ; 
+</I>&gt;<i> www.sigro.org &lt;<A HREF="http://www.sigro.org/">http://www.sigro.org/</A>&gt; Blog : 
+</I>&gt;<i> <A HREF="http://jalmiburung.blogdetik.com">http://jalmiburung.blogdetik.com</A> &lt;<A HREF="http://jalmiburung.blogdetik.com/">http://jalmiburung.blogdetik.com/</A>&gt; 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000135.html">[Radartools-users] [ASK] Two registered polarimetric dataset
+</A></li>
+	<LI>Next message: <A HREF="000137.html">[Radartools-users] [ASK] Two registered polarimetric dataset
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#136">[ date ]</a>
+              <a href="thread.html#136">[ thread ]</a>
+              <a href="subject.html#136">[ subject ]</a>
+              <a href="author.html#136">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

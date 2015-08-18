@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] glcm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20glcm&In-Reply-To=%3C1545269918%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000062.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] glcm</H1>
+    <B>Londo5 at web.de</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20glcm&In-Reply-To=%3C1545269918%40web.de%3E"
+       TITLE="[Radartools-users] glcm">Londo5 at web.de
+       </A><BR>
+    <I>Fri Jun  6 15:13:38 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000062.html">[Radartools-users] ALOS-PALSAR polarimetric data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+i want to apply textural analysis on my remote sensing images using the grey-level co-occurrence matrix. i am using ENVI instead of RAT because I had problems to import my data in RAT. hopefully i can ask my question to the forum anyhow. because i want to go sure that i understand what the program is calculating i created a simple test-image and applied the glcm-contrast. i thought i have understood the glcm but i just do not know what ENVI was calculating here. i would be very happy when someone could explain me the result.
+my test-image is 6x6 px in size and has the values:
+
+0 0 0 0 0 0
+0 0 1 1 2 0
+0 5 4 1 5 0
+0 1 2 2 2 0
+0 5 5 0 0 0
+0 0 0 0 0 0
+
+in ENVI i chose the settings as followed:
+textures to compute: &quot;contrast&quot;
+processing window: rows: &quot;3&quot; cols: &quot;3&quot;
+co-occurrence shift: X &quot;1&quot; Y &quot;0&quot;
+greyscale quantization levels: &quot;none&quot;
+
+i was thinking that this means that a 3x3 moving window is used to compute the value of the central pixel. the value-pairs are made up of the right neighbor of each pixel (=6 pairs in all). i normalized my GLCM and did the contrast weighting. but my result differ from that of ENVI.
+
+
+the result in ENVI looked like this:
+
+0.000 0.000 0.000 0.000 0.000 0.000
+0.000 4.000 3.111 6.111 0.000 0.000
+0.000 4.222 3.222 6.555 0.000 0.000
+0.000 9.666 5.777 8.777 0.000 0.000
+0.000 5.777 2.888 3.222 0.000 0.000
+0.000 0.000 0.000 0.000 0.000 0.000
+
+
+Thanks for help!!
+
+Dave
+_______________________________________________________________
+Schon geh&#246;rt? Der neue WEB.DE MultiMessenger kann`s mit allen: 
+<A HREF="http://www.produkte.web.de/messenger/?did=3016">http://www.produkte.web.de/messenger/?did=3016</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000062.html">[Radartools-users] ALOS-PALSAR polarimetric data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Linux installation problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Linux%20installation%20problem&In-Reply-To=%3C201001280914.39797.andreas.reigber%40dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000179.html">
+   <LINK REL="Next"  HREF="000181.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Linux installation problem</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Linux%20installation%20problem&In-Reply-To=%3C201001280914.39797.andreas.reigber%40dlr.de%3E"
+       TITLE="[Radartools-users] Linux installation problem">andreas.reigber at dlr.de
+       </A><BR>
+    <I>Thu Jan 28 09:14:39 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000179.html">[Radartools-users] Linux installation problem
+</A></li>
+        <LI>Next message: <A HREF="000181.html">[Radartools-users] Linux installation problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#180">[ date ]</a>
+              <a href="thread.html#180">[ thread ]</a>
+              <a href="subject.html#180">[ subject ]</a>
+              <a href="author.html#180">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Markus,
+
+On the Linux command line, type &quot;idl -vm&quot;, this will start up the virtual 
+machine. In the file selector, select the &quot;rat.sav&quot; file provided in the 
+binary version of RAT. Or type &quot;idl -vm=rat.sav&quot; directly (as written on the 
+RAT website!) Just to avoid problem, maybe delete before a possible directory 
+called &quot;.rat&quot; in your home directory. Hope that helps!
+
+Regards,
+Andreas
+
+
+
+Am Thursday 28 January 2010 03:37:05 schrieb Markus Neteler:
+&gt;<i> Dear list members,
+</I>&gt;<i>
+</I>&gt;<i> I tried to install Radartools on my 64bit Linux box but failed
+</I>&gt;<i> to complete the installation:
+</I>&gt;<i>
+</I>&gt;<i> In the step
+</I>&gt;<i> ./rat_install
+</I>&gt;<i>
+</I>&gt;<i> the GUI window says &quot;Click Next to install RAT&quot;, but then it crashes with
+</I>&gt;<i>
+</I>&gt;<i> DL&gt; rat_install
+</I>&gt;<i> % Compiled module: RAT_INSTALL.
+</I>&gt;<i> % Compiled module: CW_BGROUP.
+</I>&gt;<i> % SAVE: Feature disabled for demo mode.
+</I>&gt;<i> % Execution halted at: DEFINITIONS       290
+</I>&gt;<i> /home/neteler/software/radartools/definitions.pro
+</I>&gt;<i> %                      RAT_INSTALL       390
+</I>&gt;<i> /home/neteler/software/radartools/rat_install.pro
+</I>&gt;<i> %                      $MAIN$
+</I>&gt;<i> IDL&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> In the IDL startup phase, I got
+</I>&gt;<i> ---------------- snip ----------------
+</I>&gt;<i> idl
+</I>&gt;<i> IDL Version 7.1.1 (linux x86_64 m64). (c) 2009, ITT Visual Information
+</I>&gt;<i> Solutions % LICENSE MANAGER: Cannot find license file.
+</I>&gt;<i>    The license files (or license server system network addresses) attempted
+</I>&gt;<i> are listed below.  Use LM_LICENSE_FILE to use a different license file, or
+</I>&gt;<i> contact your software provider for a license file.
+</I>&gt;<i>   Feature:       idl
+</I>&gt;<i>   Filename:      /home/neteler/software/idl/license/*.lic
+</I>&gt;<i>   License path:
+</I>&gt;<i> /home/neteler/software/idl/license/license.dat:/home/neteler/software/idl/l
+</I>&gt;<i>icense /*.lic:
+</I>&gt;<i>   FLEXnet Licensing error:-1,359.  System Error: 2 &quot;No such file or
+</I>&gt;<i> directory&quot; For further information, refer to the FLEXnet Licensing
+</I>&gt;<i> documentation, available at &quot;www.acresso.com&quot;..
+</I>&gt;<i>   License file:
+</I>&gt;<i> /home/neteler/software/idl/license/license.dat:/home/neteler/software/idl/l
+</I>&gt;<i>icense/ *.lic
+</I>&gt;<i> % Entering timed demo mode. Each session is limited to 7 minutes
+</I>&gt;<i>   of operation. Printing and file saving are disabled.
+</I>&gt;<i>
+</I>&gt;<i>   To obtain a temporary license allowing evaluation of the full
+</I>&gt;<i>   functionality of this product contact your sales representative or
+</I>&gt;<i>   ITT Visual Information Solutions (<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">info at ittvis.com</A>)..
+</I>&gt;<i>
+</I>&gt;<i> IDL&gt; rat_install
+</I>&gt;<i>
+</I>&gt;<i> ---------------- snap ---------------
+</I>&gt;<i>
+</I>&gt;<i> Apparently I am in &quot;demo&quot; mode. Since your Web page states &quot;free version&quot;
+</I>&gt;<i> and also a representative of ITTVIS confirmed to be that I should just
+</I>&gt;<i> download the free IDL VM, I am confused... how to get into the right mode?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Markus Neteler
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000179.html">[Radartools-users] Linux installation problem
+</A></li>
+	<LI>Next message: <A HREF="000181.html">[Radartools-users] Linux installation problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#180">[ date ]</a>
+              <a href="thread.html#180">[ thread ]</a>
+              <a href="subject.html#180">[ subject ]</a>
+              <a href="author.html#180">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

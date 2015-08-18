@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Fwd:  IDIOT start error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fwd%3A%20%20IDIOT%20start%20error&In-Reply-To=%3C200908112231.25747.andreas.reigber%40nought.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000148.html">
+   <LINK REL="Next"  HREF="000150.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Fwd:  IDIOT start error</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fwd%3A%20%20IDIOT%20start%20error&In-Reply-To=%3C200908112231.25747.andreas.reigber%40nought.de%3E"
+       TITLE="[Radartools-users] Fwd:  IDIOT start error">andreas.reigber at nought.de
+       </A><BR>
+    <I>Tue Aug 11 22:31:22 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000148.html">[Radartools-users] Fwd:  IDIOT start error
+</A></li>
+        <LI>Next message: <A HREF="000150.html">[Radartools-users] PolSAR Co-registration Pb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Cool, I am happy that it works now! I probably should add a check for the IDL 
+version in idiot...
+
+Regards,
+Andreas
+
+Am Tuesday 11 August 2009 12:03:03 schrieb Gabor Orosz:
+&gt;<i> Dear Andreas,
+</I>&gt;<i>
+</I>&gt;<i> I never suspected that maybe the 6.3 version of idl would be the
+</I>&gt;<i> problem. I downloaded the 7.1 version, and idiot  1.1, and the version
+</I>&gt;<i> 1.3 RAT plugin, also run fine.
+</I>&gt;<i> Thank you so much for your help, and sorry for not thinking this of
+</I>&gt;<i> myself.
+</I>&gt;<i>
+</I>&gt;<i> Sincerely,
+</I>&gt;<i> Gabor
+</I>&gt;<i>
+</I>&gt;<i> On Aug 11, 2009, at 10:11 AM, Andreas Reigber wrote:
+</I>&gt;<i> &gt; Hi Gabor,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Well, I can only guess (of course). First of all please try to
+</I>&gt;<i> &gt; update your IDL
+</I>&gt;<i> &gt; VM to at least version 6.4. and let me know about the results. The
+</I>&gt;<i> &gt; current
+</I>&gt;<i> &gt; download of IDL is V7.1. I am not sure if this helps, but it might
+</I>&gt;<i> &gt; be that
+</I>&gt;<i> &gt; we're using stuff fron IDL&gt;=6.4.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The second strange thing is the error &quot;end of file encountered&quot;.
+</I>&gt;<i> &gt; I'll check
+</I>&gt;<i> &gt; that later today, but generally the rat plugin has to be used inside
+</I>&gt;<i> &gt; RAT
+</I>&gt;<i> &gt; (i.e. not by dragging onto the IDL-VM). You can find details about
+</I>&gt;<i> &gt; how to use
+</I>&gt;<i> &gt; plugins on the RAT website.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Regards,
+</I>&gt;<i> &gt; Andreas
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Am Monday 10 August 2009 17:40:54 schrieb Gabor Orosz:
+</I>&gt;<i> &gt;&gt; Begin forwarded message:
+</I>&gt;<i> &gt;&gt;&gt; From: Gabor Orosz &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">gabor.orosz at gmail.com</A>&gt;
+</I>&gt;<i> &gt;&gt;&gt; Date: August 10, 2009 5:39:02 PM GMT+02:00
+</I>&gt;<i> &gt;&gt;&gt; To: Andreas Reigber &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">andreas.reigber at nought.de</A>&gt;
+</I>&gt;<i> &gt;&gt;&gt; Subject: Re: [Radartools-users] IDIOT start error
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Dear Andreas,
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; I am using Mac OS X (Leopard, v10.5.7).
+</I>&gt;<i> &gt;&gt;&gt; I have downloaded the IDL 6.3 virtual machine from the
+</I>&gt;<i> &gt;&gt;&gt; www.ittvis.com website.
+</I>&gt;<i> &gt;&gt;&gt; I simply intalled the IDL VM on my computer, and paired the
+</I>&gt;<i> &gt;&gt;&gt; idiot.sav (version 1.1 standalone) program with the IDL VM, by
+</I>&gt;<i> &gt;&gt;&gt; dragging the .sav file onto the IDL VM shortcut (this should work,
+</I>&gt;<i> &gt;&gt;&gt; standard macintosh way of starting and pairing things...also, it
+</I>&gt;<i> &gt;&gt;&gt; worked with the RAT software from <A HREF="http://radartools.berlios.de/">http://radartools.berlios.de/</A>
+</I>&gt;<i> &gt;&gt;&gt; I also downloaded the idiot v1.3 rat plugin from your site. I
+</I>&gt;<i> &gt;&gt;&gt; installed the RAT software, too, as it was written down on the
+</I>&gt;<i> &gt;&gt;&gt; radartools website (without any problems).
+</I>&gt;<i> &gt;&gt;&gt; When I paired the idiot 1.3 .sav file with IDL VM, the following
+</I>&gt;<i> &gt;&gt;&gt; error message has appeared:
+</I>&gt;<i> &gt;&gt;&gt; The following error encountered: RESTORE: End of file encountered.
+</I>&gt;<i> &gt;&gt;&gt; Unit: 100
+</I>&gt;<i> &gt;&gt;&gt; File: /Applications/rat_plugin_idiot.sav Please consult the supplier
+</I>&gt;<i> &gt;&gt;&gt; of the application.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; That is all. I hope you can see the problem clearer now.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Sincerely,
+</I>&gt;<i> &gt;&gt;&gt; Gabor
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; On Aug 8, 2009, at 4:04 PM, Andreas Reigber wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt; Hi Gabor,
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; You're right, the link was broken, but now it is fixed.
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; However, your problem is odd and I don't think that the 1.3 version
+</I>&gt;<i> &gt;&gt;&gt;&gt; will fix
+</I>&gt;<i> &gt;&gt;&gt;&gt; it, but feel free to try. Basically 1.3 is for RAT and 1.1 is
+</I>&gt;<i> &gt;&gt;&gt;&gt; standalone...
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Some questions:
+</I>&gt;<i> &gt;&gt;&gt;&gt; - Windows or Linux?
+</I>&gt;<i> &gt;&gt;&gt;&gt; - Which IDL version?
+</I>&gt;<i> &gt;&gt;&gt;&gt; - Virtual machine or full version?
+</I>&gt;<i> &gt;&gt;&gt;&gt; - How exactly do you start idiot (step by step)?
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; I'll see what I can do...
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Regards,
+</I>&gt;<i> &gt;&gt;&gt;&gt; Andreas
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Am Saturday 08 August 2009 12:35:46 schrieb Gabor Orosz:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; Dear Andreas,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; I have tried using the idiot 1.1 standalone version, which I have
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; downloaded from the site you mentioned (
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; <A HREF="http://srv-43-200.bv.tu-berlin.de/idiot/download.phtml">http://srv-43-200.bv.tu-berlin.de/idiot/download.phtml</A>). Here is
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; where I
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; tried to download the v1.3 RAT plugin, but the link is,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; unfortunately,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; broken.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; The problem is that when I start the v1.1 idiot from IDL, it
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; starts up fine
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; (the main window appears), but whatever I do, the program closes
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; in a
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; couple of seconds (IDL seems to run fine). Maybe the newer version
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; of idiot
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; would work, I don't know. Please, do you have any idea what could
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; be the
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; problem?
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; Regards,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; Gabor
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt;&gt; Radartools-users mailing list
+</I>&gt;<i> &gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; --
+</I>&gt;<i> &gt; --------------------------------------
+</I>&gt;<i> &gt; Dr. Andreas Reigber
+</I>&gt;<i> &gt; Microwaves and Radar Institute
+</I>&gt;<i> &gt; German Aerospace Center (DLR)
+</I>&gt;<i> &gt; Tel.: ++49-815328-2360
+</I>&gt;<i> &gt; URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>
+</I>&gt;<i> &gt; --------------------------------------
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Radartools-users mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000148.html">[Radartools-users] Fwd:  IDIOT start error
+</A></li>
+	<LI>Next message: <A HREF="000150.html">[Radartools-users] PolSAR Co-registration Pb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Export complex COSAR Terrasar X into DN
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Export%20complex%20COSAR%20Terrasar%20X%20into%20DN&In-Reply-To=%3C20090307031926.2ry9xkz714aokcw4%40webmail.apogee.com.au%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000110.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Export complex COSAR Terrasar X into DN</H1>
+    <B>tisham at apogee.com.au</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Export%20complex%20COSAR%20Terrasar%20X%20into%20DN&In-Reply-To=%3C20090307031926.2ry9xkz714aokcw4%40webmail.apogee.com.au%3E"
+       TITLE="[Radartools-users] Export complex COSAR Terrasar X into DN">tisham at apogee.com.au
+       </A><BR>
+    <I>Fri Mar  6 18:19:26 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000110.html">[Radartools-users] SAR image simulator for RAT
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+The complex values stored in the COSAR file are actually the  
+DN(Digital Numbers) recorded. There is a nice discussion about  
+converting and calibrating data on the Infoterra site.
+<A HREF="http://www.infoterra.de/fileadmin/Verzeichnisordner/Dokumente/2_AboutUs/0207_FormalDocs/TSXX-ITD-TN-0049-radiometric_calculations_I1.00.pdf">http://www.infoterra.de/fileadmin/Verzeichnisordner/Dokumente/2_AboutUs/0207_FormalDocs/TSXX-ITD-TN-0049-radiometric_calculations_I1.00.pdf</A>
+
+The constants are stored in the metadata XML which RAT can partially  
+understand. The mechanisms for using the orbits etc are not there yet  
+but I can try to implement. Incidence angle calculations will also  
+require an underlying DEM.
+
+I hope this helps let me know if there are any specific feature requests.
+
+Cheers,
+
+Tisham.
+
+----------------------------------------------------------------
+This message was sent using IMP, the Internet Messaging Program.
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000110.html">[Radartools-users] SAR image simulator for RAT
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

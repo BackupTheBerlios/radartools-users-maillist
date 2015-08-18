@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] File size question
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20File%20size%20question&In-Reply-To=%3Cd6a8b87d0711290252q503c9aaco849b0471194c56a1%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000030.html">
+   <LINK REL="Next"  HREF="000032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] File size question</H1>
+    <B>Maxim Neumann</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20File%20size%20question&In-Reply-To=%3Cd6a8b87d0711290252q503c9aaco849b0471194c56a1%40mail.gmail.com%3E"
+       TITLE="[Radartools-users] File size question">maxn at cs.tu-berlin.de
+       </A><BR>
+    <I>Thu Nov 29 11:52:21 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000030.html">[Radartools-users] File size question
+</A></li>
+        <LI>Next message: <A HREF="000032.html">[Radartools-users] Array of patches
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Garrett,
+
+It looks like a variable wrapping problem at the  2GB limit. [*]
+Please copy the attached modified file &quot;cut_region.pro&quot; into the
+directory &quot;rat/general/&quot; of your rat installation (this change will be
+included in the upcoming new release).
+This should solve this problem.
+Since we didn't work a lot with files &gt;2GB it is possible, that there
+are still some other small bugs with reference to large files.
+Thanks for reporting any bug.
+
+Best regards,
+Maxim
+
+[*] assuming your system and your IDL version allow to access files
+greater than 2GB, which is now standard. Either this is possible
+depends on the system-constant !VERSION.FILE_OFFSET_BITS. If it's
+equal 64 then it's ok, if it is only 32, then you are in trouble.
+
+
+On Nov 29, 2007 12:12 AM, Garrett Parsons &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">gparsons at vantpoint.com</A>&gt; wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Is there a maximum file size that can be read into RAT? I have a
+</I>&gt;<i> 15000x25000 pixel (complex) image, and I'm running into problems when
+</I>&gt;<i> trying to 'cut out area' in the upper part (above about 11000 pixels in
+</I>&gt;<i> y) of the image. Sometimes it will wrap around and cut out a part of the
+</I>&gt;<i> lower image, and sometimes it crashes with the error message: POINT_LUN:
+</I>&gt;<i> Negative position argument not allowed. Position: -173769672, Unit:102
+</I>&gt;<i> File: ...
+</I>&gt;<i>
+</I>&gt;<i> I thought at first I might be reading my complex binary files wrong into
+</I>&gt;<i> RAT, but RAT displays the data fine, and if I load in a smaller binary
+</I>&gt;<i> file, everything is great.
+</I>&gt;<i>
+</I>&gt;<i> I should also mention that I'm using the Windows version, running on IDL
+</I>&gt;<i> Virtual Machine.
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance for your help,
+</I>&gt;<i>
+</I>&gt;<i> Garrett
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> _________________________________
+</I>&gt;<i>
+</I>&gt;<i> VPI - Innovative Radar Solutions
+</I>&gt;<i> _________________________________
+</I>&gt;<i>
+</I>&gt;<i> Garrett Parsons, Systems Analyst
+</I>&gt;<i> Vantage Point International Inc.
+</I>&gt;<i> 400 March Road, Suite 210
+</I>&gt;<i> Ottawa, Ontario  K2K 3H4
+</I>&gt;<i> Tel (613) 592-7700 ext 223
+</I>&gt;<i> Fax (613) 592-7701
+</I>&gt;<i> E-mail: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">gparsons at vantpoint.com</A>
+</I>&gt;<i> <A HREF="http://www.vantpoint.com">http://www.vantpoint.com</A>
+</I>&gt;<i> _________________________________
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: cut_region.pro
+Type: application/octet-stream
+Size: 11968 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20071129/c2b9d20b/attachment.obj">https://lists.berlios.de/pipermail/radartools-users/attachments/20071129/c2b9d20b/attachment.obj</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000030.html">[Radartools-users] File size question
+</A></li>
+	<LI>Next message: <A HREF="000032.html">[Radartools-users] Array of patches
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

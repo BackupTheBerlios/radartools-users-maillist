@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] bug in Lee category preserving classification
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C9CE939A5-882B-4A68-9037-5E66E4FDB109%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000157.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] bug in Lee category preserving classification</H1>
+    <B>Benjamin Deschamps</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C9CE939A5-882B-4A68-9037-5E66E4FDB109%40gmail.com%3E"
+       TITLE="[Radartools-users] bug in Lee category preserving classification">bdesc100 at gmail.com
+       </A><BR>
+    <I>Mon Oct 19 19:40:07 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000157.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am running into problems when running a Lee category preserving  
+classification. I am working with RADARAST-2 SLC data (the Mankota, SK  
+demo dataset available here: <A HREF="http://www.radarsat2.info/product/">http://www.radarsat2.info/product/</A> 
+demo_set/) in covariance matrix format. My steps so far are:
+
+1) File &gt; Open External &gt; RADARSAT-2
+2) PolSAR &gt; Transform &gt; Vector -&gt; Matrix
+3) PolSAR &gt; Classification &gt; Lee category preserving
+
+This error message occurs just before the start of the first Wishart  
+itteration:
+
+% Attempt to subscript ARR with I is out of range.
+% Execution halted at: 	BLOCK_TRACE
+%						DOWISHARTITER
+%						CLASSIF_LEE
+%						RAT_EVENT
+%						IDLRTMAIN
+%						$MAIN$
+
+
+However, I am able to run a Freeman-Durden decomposition on the same  
+data without any problems.
+
+Am I missing something? Thanks in advance for any help or suggestions.
+
+
+Benjamin Deschamps
+M.Sc. Candidate
+Geomatics and Landscape Ecology Research Laboratory (GLEL)
+Department of Geography and Environmental Studies
+Carleton University
+1125 Colonel By Drive
+Ottawa, Ontario  Canada  K1S 5B6
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">bdescham at connect.carleton.ca</A>
+www.glel.carleton.ca
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20091019/92511733/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20091019/92511733/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000157.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

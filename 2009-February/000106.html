@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] IDIOT-terrain motion estimation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20IDIOT-terrain%20motion%20estimation&In-Reply-To=%3C200902230849.39406.andreas.reigber%40nought.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000104.html">
+   <LINK REL="Next"  HREF="000105.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] IDIOT-terrain motion estimation</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20IDIOT-terrain%20motion%20estimation&In-Reply-To=%3C200902230849.39406.andreas.reigber%40nought.de%3E"
+       TITLE="[Radartools-users] IDIOT-terrain motion estimation">andreas.reigber at nought.de
+       </A><BR>
+    <I>Mon Feb 23 08:49:39 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000104.html">[Radartools-users] IDIOT-terrain motion estimation
+</A></li>
+        <LI>Next message: <A HREF="000105.html">[Radartools-users] Export complex COSAR Terrasar X into DN
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#106">[ date ]</a>
+              <a href="thread.html#106">[ thread ]</a>
+              <a href="subject.html#106">[ subject ]</a>
+              <a href="author.html#106">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Yes, IDIOT is calculating a synthetic interferogram from the SRTM DEM and the 
+orbit data. Then, the slave image is coregistered to the master based on the 
+orbit data and the DEM, and the real interferogram is calculated. As an 
+output you get this plus the difference between real and synthetic one.
+
+The estimation of terrain motion you get by counting the fringes. Each fringe 
+corresponds to 2.8cm of motion (half the wavelength of ENVISAT) in 
+line-of-sight direction. To estimate horizonal and/or vertical components is 
+difficult, you have to combine several interferograms from different 
+directions (there are some publications on this topic).
+
+Btw, nice to hear that someone uses IDIOT! There was never much feedback...
+
+Greetings,
+Andreas
+
+
+
+Am Samstag, 21. Februar 2009 20:43:44 schrieb gildas cozian:
+&gt;<i> Hello,
+</I>&gt;<i>
+</I>&gt;<i> I am using IDIOT as a pedagogical tool to illustrate radar interferometry
+</I>&gt;<i> application in earthquake dommage assessment. Thanks to easy and simple
+</I>&gt;<i> access of IDIOT software I have been using successfully a pair of ENVISAT
+</I>&gt;<i> ASAR images from ESA on BAM site (Iran) before and after 2003 earthquake
+</I>&gt;<i> and got herewith output result (amplitude+dinsar). - Could you please tell
+</I>&gt;<i> me how I could get some more detailed information about how IDIOT is
+</I>&gt;<i> calculating the differential interferogram from the 2 ENVISAT images and
+</I>&gt;<i> SRTM DTM (does it calculate 1 or 2 synthetic SAR images from DTM and orbit
+</I>&gt;<i> data? and what are the two pairs of images used to create differential
+</I>&gt;<i> interferogram?) - How to get a rough estimation  of terrain motion from
+</I>&gt;<i> this differential interferogram (how many centimeters vertical or
+</I>&gt;<i> horizontal differential motion corresponding to phase difference between
+</I>&gt;<i> two successive fringes on the interferogram)
+</I>&gt;<i>
+</I>&gt;<i> Thanks a lot.
+</I>&gt;<i>
+</I>&gt;<i> Regards
+</I>&gt;<i>
+</I>&gt;<i> Gildas COZIAN
+</I>&gt;<i> Paris - France
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _________________________________________________________________
+</I>&gt;<i> T&#233;l&#233;phonez gratuitement &#224; tous vos proches avec Windows Live Messenger&#160; !&#160;
+</I>&gt;<i> T&#233;l&#233;chargez-le maintenant !&#160; <A HREF="http://www.windowslive.fr/messenger/1.asp">http://www.windowslive.fr/messenger/1.asp</A>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000104.html">[Radartools-users] IDIOT-terrain motion estimation
+</A></li>
+	<LI>Next message: <A HREF="000105.html">[Radartools-users] Export complex COSAR Terrasar X into DN
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#106">[ date ]</a>
+              <a href="thread.html#106">[ thread ]</a>
+              <a href="subject.html#106">[ subject ]</a>
+              <a href="author.html#106">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

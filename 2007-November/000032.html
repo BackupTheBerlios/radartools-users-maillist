@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Array of patches
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Array%20of%20patches&In-Reply-To=%3C475035BC.9010205%40vantpoint.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000031.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Array of patches</H1>
+    <B>Garrett Parsons</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Array%20of%20patches&In-Reply-To=%3C475035BC.9010205%40vantpoint.com%3E"
+       TITLE="[Radartools-users] Array of patches">gparsons at vantpoint.com
+       </A><BR>
+    <I>Fri Nov 30 17:09:32 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000031.html">[Radartools-users] File size question
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I've been having a problem with the array of patches coregistration 
+routine crashing either just after the offsets are calculated, or after 
+I click to apply the offsets.
+
+Using the demo version of IDL, I traced my problem to this line in 
+coreg_patch.pro:
+        yo  = min_curve_surf(yo[aux],aux mod patx, aux / patx, 
+gs=[1,1],bounds=[0,0,patx-1,paty-1])
+
+Basically my problem is that after the coarse registration my images are 
+perfectly aligned in the y direction (strange, but true), not requiring 
+any shifts (or all the shifts are the same). Only the x direction needs 
+to be warped. So in coreg_patch.pro at the above line, the input yo[aux] 
+to the min_curve_surf function is an array of zeros.
+At about line 293 of min_curve_surf.pro I then get a divide by 0:
+        zscale = 1.0 / (zmax - zmin)     ;Normalize Z, other coords are 
+already on unit sphere.
+zmax and zmin are the max and min of yo[aux], which are zeros (or the 
+same number). So zscale is now inf, and the output of the min_curve_surf 
+ends up being an array of NaNs.
+
+I added a very small number to the denominator, ie. (zmax - zmin + 
+0.0000000000000001), which avoids the divide by 0, but unfortunately the 
+demo version of IDL has disabled the some features and when the temp RAT 
+file is created, IDL closes.
+
+Garrett
+
+
+
+
+-- 
+_________________________________
+
+VPI - Innovative Radar Solutions
+_________________________________
+
+Garrett Parsons, Systems Analyst
+Vantage Point International Inc.
+400 March Road, Suite 210
+Ottawa, Ontario  K2K 3H4
+Tel (613) 592-7700 ext 223
+Fax (613) 592-7701
+E-mail: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">gparsons at vantpoint.com</A>
+<A HREF="http://www.vantpoint.com">http://www.vantpoint.com</A>
+_________________________________
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000031.html">[Radartools-users] File size question
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

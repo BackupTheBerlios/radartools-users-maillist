@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Pb in coregistration multitemporal	images	with RAT
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Pb%20in%20coregistration%20multitemporal%0A%09images%09with%20RAT&In-Reply-To=%3CCOL106-W62D30022339C6D1D3EE61EEE970%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000117.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Pb in coregistration multitemporal	images	with RAT</H1>
+    <B>gildas cozian</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Pb%20in%20coregistration%20multitemporal%0A%09images%09with%20RAT&In-Reply-To=%3CCOL106-W62D30022339C6D1D3EE61EEE970%40phx.gbl%3E"
+       TITLE="[Radartools-users] Pb in coregistration multitemporal	images	with RAT">cozian1 at hotmail.com
+       </A><BR>
+    <I>Fri Mar 20 23:36:07 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000117.html">[Radartools-users] Pb in coregistration multitemporal images	with RAT
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#118">[ date ]</a>
+              <a href="thread.html#118">[ thread ]</a>
+              <a href="subject.html#118">[ subject ]</a>
+              <a href="author.html#118">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Hi Asep,
+
+Thanks a lot Asep for your suggestion.
+
+Could you please give more details about the process to &quot;extract each channel at the first&quot;?
+
+Thanks
+
+Cheers
+
+Gildas
+
+
+Date: Thu, 19 Mar 2009 19:07:43 -0700
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">asep_120 at yahoo.com</A>
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+Subject: Re: [Radartools-users] Pb in coregistration multitemporal images	with RAT
+
+Hi Gildas,
+
+In RAT, I think speckle filtering can be done only for single SAR data. So if we want to filter our multitemporal image we should extract each channel at the first, then applying speckle filtering may be.
+
+Thanks,
+Asep
+
+
+--- On Thu, 3/19/09, gildas cozian &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">cozian1 at hotmail.com</A>&gt; wrote:
+From: gildas cozian &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">cozian1 at hotmail.com</A>&gt;
+Subject: RE: [Radartools-users] Pb in coregistration multitemporal images with RAT
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">asep_120 at yahoo.com</A>
+Cc: &quot;rat radartool&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+Date: Thursday, March 19, 2009, 5:02 PM
+
+
+
+
+Thanks a lot Asep for your help.
+
+I could solve my coregistration problem on RAT by cutting out extracts of my images before creating multitemporal set.
+
+My problem is now : how to apply multitemporal filter (to reduce speckle) to my multitemporal set of images.
+I could not find so far in RAT a specific tool for multitemporal filtering like for instance LVMMSE (Linear Vectorial Minimum Mean Square Error)
+Could you please advise on this specific problem ?
+
+Thanks
+
+Cheers
+
+Gildas COZIAN
+France
+
+
+Date: Thu, 19 Mar 2009 08:50:05 -0700
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">asep_120 at yahoo.com</A>
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+Subject: Re: [Radartools-users] Pb in coregistration multitemporal images	with RAT
+
+RAT always get error when corregister the multitemporal image set even though image size is not large. One thing can we do at this moment if we want to make multitemporal analysis by using InSAR pair corregistration. Built inSAR pair, corregister, then move to multitemporal modul by extracting their amplitude. Hopely help the problem, thanks.
+
+Cheers,
+----------------------Asep SaepulohResearch AssistantLaboratory of Volcanology and Geothermal-LVGDepartment of GeologyInstitut Teknologi
+ Bandung-ITBJl. Ganesha 10 Bandung, Indonesia-40132
+
+--- On Tue, 3/10/09, Andreas Reigber &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">andreas.reigber at dlr.de</A>&gt; wrote:
+From: Andreas Reigber &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">andreas.reigber at dlr.de</A>&gt;
+Subject: Re: [Radartools-users] Pb in coregistration multitemporal images with RAT
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+Date: Tuesday, March 10, 2009, 10:19 AM
+
+Hi Gildas,
+
+Thanks for reporting this. Unluckily, I don't know the internals of these 
+routines, it was a student who implemented this quite a while ago.
+
+What you could try is to save your multitemporal set after creating it and 
+then rerun the coregistration with different (larger) max offset settings. 
+Maybe this helps. How big is your image in pixels? Are the
+ images at least 
+roughly
+ coregistered?
+
+Greetings,
+Andreas
+
+
+
+Am Friday 06 March 2009 23:56:24 schrieb gildas cozian:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I got a bug after trying to coregister 2 multitemporal ENVISAT images with
+</I>&gt;<i> RAT
+</I>&gt;<i>
+</I>&gt;<i> I first built and displayed the set of images by using in the menu :
+</I>&gt;<i> File&gt;Construct&gt;Multitemporal Then, I used the following chain of
+</I>functions
+&gt;<i> in the menu :
+</I>&gt;<i> SAR&gt;Multitemporal&gt;Coregistration&gt;Coarse (Global Offset)
+</I>&gt;<i>
+</I>&gt;<i> In the coarse coregistration window the parameters were set as follow :
+</I>&gt;<i> Let RAT estimate offset values
+</I>&gt;<i> Max offset in x to check : 128
+</I>&gt;<i> Max offset in y to check : 1024
+</I>&gt;<i> then I click on the button &quot;Estimate (Memory-Intensiv)&quot;
+</I>&gt;<i>
+</I>&gt;<i> and I got following error message :
+</I>&gt;<i>
+</I>&gt;<i> % Subscript range values of the form low:high must be &gt;=0, &lt; size,
+</I>with
+&gt;<i>
+</I> low&lt;=high : BILD % Execution
+ halted at RRAT
+&gt;<i> % MT_COREG_COARSE
+</I>&gt;<i> % RAT_EVENT
+</I>&gt;<i> % IDLRF_MAIN
+</I>&gt;<i> % SMAINS
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Could you help me please (a small tutorial about this coregistration
+</I>&gt;<i> function would be welcome).
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i>
+</I>&gt;<i> Gildas COZIAN
+</I>&gt;<i> Paris - FRANCE
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _________________________________________________________________
+</I>&gt;<i> Vous voulez savoir ce que vous pouvez faire avec le nouveau Windows
+</I>Live ?
+&gt;<i> Lancez-vous ! <A HREF="http://www.microsoft.com/windows/windowslive/default.aspx">http://www.microsoft.com/windows/windowslive/default.aspx</A>
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+_______________________________________________
+Radartools-users mailing
+
+ list
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+
+
+Souhaitez vous  &#171; &#234;tre au bureau sans y &#234;tre &#187; ? Oui je le veux ! 
+
+
+_________________________________________________________________
+T&#233;l&#233;phonez gratuitement &#224; tous vos proches avec Windows Live Messenger&#160; !&#160; T&#233;l&#233;chargez-le maintenant !&#160;
+<A HREF="http://www.windowslive.fr/messenger/1.asp">http://www.windowslive.fr/messenger/1.asp</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20090320/8e4658c1/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20090320/8e4658c1/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000117.html">[Radartools-users] Pb in coregistration multitemporal images	with RAT
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#118">[ date ]</a>
+              <a href="thread.html#118">[ thread ]</a>
+              <a href="subject.html#118">[ subject ]</a>
+              <a href="author.html#118">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

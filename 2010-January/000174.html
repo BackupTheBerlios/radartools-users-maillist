@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] small change in insar\coreg_patch.pro
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20small%20change%20in%20insar%5Ccoreg_patch.pro&In-Reply-To=%3C201001080955.09328.andreas.reigber%40dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000173.html">
+   <LINK REL="Next"  HREF="000176.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] small change in insar\coreg_patch.pro</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20small%20change%20in%20insar%5Ccoreg_patch.pro&In-Reply-To=%3C201001080955.09328.andreas.reigber%40dlr.de%3E"
+       TITLE="[Radartools-users] small change in insar\coreg_patch.pro">andreas.reigber at dlr.de
+       </A><BR>
+    <I>Fri Jan  8 09:55:09 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000173.html">[Radartools-users] small change in insar\coreg_patch.pro
+</A></li>
+        <LI>Next message: <A HREF="000176.html">[Radartools-users] SGF Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Paul,
+
+This is a problem in many functions. We tried to add the command &quot;compile_opt 
+idl2&quot; in the first line of some routines, which (among other things) defines 
+_all_ int as long. I think this is a better solution, but we have been very 
+lasy recently, so many functions are still missing this update...
+
+Anyway, thanks for the hint!
+
+Regards,
+Andreas
+
+
+
+
+Am Thursday 07 January 2010 17:46:23 schrieb Paul Mallas:
+&gt;<i> I made a small change in insar\coreg_patch.pro to allow larger images to
+</I>&gt;<i> be coregistered with the array of patches.  It is simply changing an int
+</I>&gt;<i> value to a ulong.  Here's the diff between your current (0.21) version
+</I>&gt;<i> and my change:
+</I>&gt;<i>
+</I>&gt;<i> 245c245
+</I>&gt;<i> &lt;               bsx1 = 2UL^bsx
+</I>&gt;<i> ---
+</I>&gt;<i>
+</I>&gt;<i>  &gt;               bsx1 = 2^bsx
+</I>&gt;<i>
+</I>&gt;<i> 251c251
+</I>&gt;<i> &lt;               bsy1 = 2UL^bsy
+</I>&gt;<i> ---
+</I>&gt;<i>
+</I>&gt;<i>  &gt;               bsy1 = 2^bsy
+</I>&gt;<i>
+</I>&gt;<i> Thought it might be good to incorporate that.
+</I>&gt;<i>
+</I>&gt;<i> Thanks!
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000173.html">[Radartools-users] small change in insar\coreg_patch.pro
+</A></li>
+	<LI>Next message: <A HREF="000176.html">[Radartools-users] SGF Format
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

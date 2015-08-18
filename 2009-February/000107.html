@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Export complex COSAR Terrasar X into DN
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Export%20complex%20COSAR%20Terrasar%20X%20into%20DN&In-Reply-To=%3C200902231116.24644.andreas.reigber%40nought.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000105.html">
+   <LINK REL="Next"  HREF="000109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Export complex COSAR Terrasar X into DN</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Export%20complex%20COSAR%20Terrasar%20X%20into%20DN&In-Reply-To=%3C200902231116.24644.andreas.reigber%40nought.de%3E"
+       TITLE="[Radartools-users] Export complex COSAR Terrasar X into DN">andreas.reigber at nought.de
+       </A><BR>
+    <I>Mon Feb 23 11:16:24 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000105.html">[Radartools-users] Export complex COSAR Terrasar X into DN
+</A></li>
+        <LI>Next message: <A HREF="000109.html">[Radartools-users] SAR image simulator for RAT
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#107">[ date ]</a>
+              <a href="thread.html#107">[ thread ]</a>
+              <a href="subject.html#107">[ subject ]</a>
+              <a href="author.html#107">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, 
+
+1) I think the problem is just that RAT uses a clever preview calculation... 
+In fact, I think  the image probably _is_ speckled as you see it in TIFF. The 
+RAT window presums the full resolution image for display which acts like a 
+speckle filter. Try to use the zoom tool in RAT, the you see the &quot;real&quot; 
+image.
+2) You need some calibration values (from the COSAR header, I don&#180;t know). You 
+won&#180;t be able to do the conversion with RAT.
+3) You again need some values (from the COSAR header, I don&#180;t know). However, 
+there is a simple slant-to-ground conversion in RAT for flat terrain and 
+neglecting Earth&#180;s curvature. Maybe this is enough for your purpose?
+
+Greetngs,
+Andreas
+
+
+Am Samstag, 21. Februar 2009 22:02:24 schrieb <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">boeaja.yk at gmail.com</A>:
+&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> I am now start working with Terrasar X data using RAT. I imported COSAR
+</I>&gt;<i> image into RAT format, and I got a very nice and smooth result. However
+</I>&gt;<i> I have got a problem since when I try to export either into ENVI format
+</I>&gt;<i> or TIFF file the result was not as good as when it was shown by RAT.
+</I>&gt;<i>
+</I>&gt;<i> 1. Can somebody help me to solve this problem? I have tried to convert
+</I>&gt;<i> the complex number into amplitude and intensity as well, but when I
+</I>&gt;<i> export to another file format the results are full of speckle.
+</I>&gt;<i> 2. I would like to know how to convert the complex COSAR values into DN
+</I>&gt;<i> value, which normally produced in higher processing level of terrasar x
+</I>&gt;<i> data.
+</I>&gt;<i> 3. To calculate ground range from slant range, we need a local incidence
+</I>&gt;<i> angle image. If I have COSAR terrasar X data, is it possible to derive
+</I>&gt;<i> this local incidence angle map?
+</I>&gt;<i>
+</I>&gt;<i> I am very glad to hear from other RAT users and SAR experts as I am
+</I>&gt;<i> really a beginner using SAR data. Thank you.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Arief
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000105.html">[Radartools-users] Export complex COSAR Terrasar X into DN
+</A></li>
+	<LI>Next message: <A HREF="000109.html">[Radartools-users] SAR image simulator for RAT
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#107">[ date ]</a>
+              <a href="thread.html#107">[ thread ]</a>
+              <a href="subject.html#107">[ subject ]</a>
+              <a href="author.html#107">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

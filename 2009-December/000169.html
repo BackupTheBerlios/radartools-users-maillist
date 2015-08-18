@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] ASAR polarisation processing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20ASAR%20polarisation%20processing&In-Reply-To=%3C200912011740.43855.andreas.reigber%40dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000168.html">
+   <LINK REL="Next"  HREF="000170.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] ASAR polarisation processing</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20ASAR%20polarisation%20processing&In-Reply-To=%3C200912011740.43855.andreas.reigber%40dlr.de%3E"
+       TITLE="[Radartools-users] ASAR polarisation processing">andreas.reigber at dlr.de
+       </A><BR>
+    <I>Tue Dec  1 17:40:43 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000168.html">[Radartools-users]  ASAR polarisation processing
+</A></li>
+        <LI>Next message: <A HREF="000170.html">[Radartools-users] change wrap value
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#169">[ date ]</a>
+              <a href="thread.html#169">[ thread ]</a>
+              <a href="subject.html#169">[ subject ]</a>
+              <a href="author.html#169">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Maxim is right, RAT in general is not really prepared to handle dual-pol data. 
+However, you can try to double one of the two channels in order to simulate a 
+full-pol dataset. Maybe it works, but I won't expect much. 
+
+Anyway, ASAR-APP data is _not_ really polarimetric, basically you get only 2 
+valid amplitude channels, the interchannel phase is pure noise. Therefore, a 
+Wishart classification does not make much sense...
+
+Regards,
+Andreas
+
+
+
+
+Am Tuesday 01 December 2009 17:36:08 schrieb vito maddalena:
+&gt;<i> Hi All,
+</I>&gt;<i>
+</I>&gt;<i> someone can answer me about the questions in the following?
+</I>&gt;<i> Thanks a lot!
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Vito
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --- Mar 24/11/09, vito maddalena &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt; ha scritto:
+</I>&gt;<i>
+</I>&gt;<i> Da: vito maddalena &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt;
+</I>&gt;<i> Oggetto: Re: [Radartools-users] ASAR polarisation processing
+</I>&gt;<i> A: &quot;Maxim Neumann&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+</I>&gt;<i> Data: Marted&#236; 24 novembre 2009, 13:46
+</I>&gt;<i>
+</I>&gt;<i> Hi Maxim,
+</I>&gt;<i>
+</I>&gt;<i> Thank you for your answer.
+</I>&gt;<i>
+</I>&gt;<i> I have tried the k-means Wishart classification (general) and I have
+</I>&gt;<i> obtained the attached error of the RAT software.
+</I>&gt;<i>
+</I>&gt;<i> In partuicular I would like to know if RAT is able to process dual
+</I>&gt;<i> polarisation SAR data (HH-HV or VV-VH or VV-HH). In case of affirmative
+</I>&gt;<i> answer, which is the best strategy to process such data? Are there specific
+</I>&gt;<i> processing steps that shall be carried out? Which kinds of processing can
+</I>&gt;<i> be perfomed on dual-pol SAR data?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thank you for your help.
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i>
+</I>&gt;<i> Vito
+</I>&gt;<i>
+</I>&gt;<i> --- Lun 23/11/09, Maxim Neumann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt; ha scritto:
+</I>&gt;<i>
+</I>&gt;<i> Da: Maxim Neumann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+</I>&gt;<i> Oggetto: Re: [Radartools-users] ASAR polarisation
+</I>&gt;<i>  processing
+</I>&gt;<i> A: &quot;vito maddalena&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt;
+</I>&gt;<i> Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+</I>&gt;<i> Data: Luned&#236; 23 novembre 2009, 18:27
+</I>&gt;<i>
+</I>&gt;<i> Hi Vito,
+</I>&gt;<i>
+</I>&gt;<i> I am not sure, but it is possible that the classification procedures are
+</I>&gt;<i> not adapted to dual-pol data. Which classification did you try? What was
+</I>&gt;<i> the error message?
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Maxim
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Mon, Nov 23, 2009 at 1:20 AM, vito maddalena &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt;
+</I>&gt;<i> wrote:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Dear All,
+</I>&gt;<i>
+</I>&gt;<i> I&#160; have been using RAT sw for a few weeks and I would like to do some
+</I>&gt;<i> questions about ASAR_APS-HH_HV dual-pol image processing.
+</I>&gt;<i>
+</I>&gt;<i> I have first construct the Dual-Pol vector, I think a 2-element scattering
+</I>&gt;<i> vector, and then I have generated the covariance matrix (using a presumming
+</I>&gt;<i> factor of 2x10).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> At this point I have 4 channels of complex data.
+</I>&gt;<i>
+</I>&gt;<i> If I try to perform a general classification at this point, the sw crashes
+</I>&gt;<i> in any case.
+</I>&gt;<i>
+</I>&gt;<i> I think there is a conceptual problem that I ignore.
+</I>&gt;<i>
+</I>&gt;<i> How to do therefore a classification of a dual-pol ASAR image?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thank you in advance
+</I>&gt;<i> Regards!
+</I>&gt;<i>
+</I>&gt;<i> Vito
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i>
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000168.html">[Radartools-users]  ASAR polarisation processing
+</A></li>
+	<LI>Next message: <A HREF="000170.html">[Radartools-users] change wrap value
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#169">[ date ]</a>
+              <a href="thread.html#169">[ thread ]</a>
+              <a href="subject.html#169">[ subject ]</a>
+              <a href="author.html#169">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

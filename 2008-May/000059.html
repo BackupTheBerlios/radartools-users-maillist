@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Opening ERS2 SLC fails - new thread
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Opening%20ERS2%20SLC%20fails%20-%20new%20thread&In-Reply-To=%3C4820B8EF.9010507%40rsmas.miami.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000058.html">
+   <LINK REL="Next"  HREF="000060.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Opening ERS2 SLC fails - new thread</H1>
+    <B>Paul Mallas</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Opening%20ERS2%20SLC%20fails%20-%20new%20thread&In-Reply-To=%3C4820B8EF.9010507%40rsmas.miami.edu%3E"
+       TITLE="[Radartools-users] Opening ERS2 SLC fails - new thread">pmallas at rsmas.miami.edu
+       </A><BR>
+    <I>Tue May  6 22:00:47 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000058.html">[Radartools-users] Opening ERS2 SLC fails - new thread
+</A></li>
+        <LI>Next message: <A HREF="000060.html">[Radartools-users] Opening ERS2 SLC fails - new thread
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#59">[ date ]</a>
+              <a href="thread.html#59">[ thread ]</a>
+              <a href="subject.html#59">[ subject ]</a>
+              <a href="author.html#59">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hmm, came up with a simple work around.  But it seems that  that my 
+header data is different than what is expected in open_asf_slcs.pro.
+
+ On line 81, there is this:
+
+    if header[48] EQ 69 AND header[49] EQ 50  THEN spacecraft = 'ERS-2'
+
+but my header values are header[48] = 69 and header[49] = 82 - note sur 
+what the discrepancy there is.
+
+Anyway, my work around was to simply initialize the 'spacecraft' string 
+variable:
+
+spacecraft = 'UNK' prior to line 78 and it runs fine (the 'spacecraft' 
+string seems to be just information for the title bar of the dialog window.)
+
+-P
+
+Paul Mallas wrote:
+&gt;<i> Oops, I replied to an unrelated thread - sorry.
+</I>&gt;<i> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</I>&gt;<i> Howdy,
+</I>&gt;<i>
+</I>&gt;<i> I had a crash trying to import an ASF ERS-2 SLC.  The text of the error 
+</I>&gt;<i> message below.  The file I am using is not from ASF, but is a CEOS which 
+</I>&gt;<i> I think would be compatible.  I will look into this bug, but if anyone 
+</I>&gt;<i> has a any insight in to this issue, it would be appreciated.
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ---------------------------
+</I>&gt;<i> CRASH!!!!
+</I>&gt;<i> ---------------------------
+</I>&gt;<i> OOOPS: You have found a bug in RAT !!!
+</I>&gt;<i>
+</I>&gt;<i> Error message:
+</I>&gt;<i> Variable is undefined: SPACECRAFT.
+</I>&gt;<i> Execution halted at:  OPEN_ASF_SLCS     200 
+</I>&gt;<i> C:\cygwin\home\pmallas\code\idl\external\rat_v0.20\io\open_asf_slcs.pro
+</I>&gt;<i>                      RAT_EVENT         103 
+</I>&gt;<i> C:\cygwin\home\pmallas\code\idl\external\rat_v0.20\rat.pro
+</I>&gt;<i>                      $MAIN$        
+</I>&gt;<i> Please help improving RAT and report this problem to the forum on the 
+</I>&gt;<i> RAT website.
+</I>&gt;<i> To find a solution, we need the precise error message and a description 
+</I>&gt;<i> of what
+</I>&gt;<i> you did exactly (function, settings, data type, etc.).
+</I>&gt;<i>
+</I>&gt;<i> RAT will try now to recover from this crash. Good luck!
+</I>&gt;<i> ---------------------------
+</I>&gt;<i> OK  ---------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000058.html">[Radartools-users] Opening ERS2 SLC fails - new thread
+</A></li>
+	<LI>Next message: <A HREF="000060.html">[Radartools-users] Opening ERS2 SLC fails - new thread
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#59">[ date ]</a>
+              <a href="thread.html#59">[ thread ]</a>
+              <a href="subject.html#59">[ subject ]</a>
+              <a href="author.html#59">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

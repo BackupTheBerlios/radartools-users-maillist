@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] RAT crashes during inSAR coregistration	-	UPDATE
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20RAT%20crashes%20during%20inSAR%20coregistration%0A%09-%09UPDATE&In-Reply-To=%3C1213522347.6627.25.camel%40localhost.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000065.html">
+   <LINK REL="Next"  HREF="000067.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] RAT crashes during inSAR coregistration	-	UPDATE</H1>
+    <B>Zbigniew Perski</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20RAT%20crashes%20during%20inSAR%20coregistration%0A%09-%09UPDATE&In-Reply-To=%3C1213522347.6627.25.camel%40localhost.localdomain%3E"
+       TITLE="[Radartools-users] RAT crashes during inSAR coregistration	-	UPDATE">zbigniew.perski at us.edu.pl
+       </A><BR>
+    <I>Sun Jun 15 11:32:27 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000065.html">[Radartools-users] RAT crashes during inSAR coregistration -	UPDATE
+</A></li>
+        <LI>Next message: <A HREF="000067.html">[Radartools-users] please help me ..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#66">[ date ]</a>
+              <a href="thread.html#66">[ thread ]</a>
+              <a href="subject.html#66">[ subject ]</a>
+              <a href="author.html#66">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear Asep,
+
+It seems that it was it. I reduced my file into 3800 x 3800 and it
+works. I forgot how large the data file is ;-)
+
+Thanks!
+
+Zbigniew
+
+
+
+On Sun, 2008-06-15 at 01:56 -0700, Asep Saepuloh wrote:
+&gt;<i> Dear Zbigniew,
+</I>&gt;<i> 
+</I>&gt;<i> I had the same experience with you. I think the problem come from too
+</I>&gt;<i> large of the InSAR pair. Please try to &quot;cut out region&quot; and then run
+</I>&gt;<i> again.
+</I>&gt;<i> 
+</I>&gt;<i> Best regards,
+</I>&gt;<i> Asep
+</I>&gt;<i> 
+</I>&gt;<i>         --- On Sun, 6/15/08, Zbigniew Perski
+</I>&gt;<i>         &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">zbigniew.perski at us.edu.pl</A>&gt; wrote:
+</I>&gt;<i>                 From: Zbigniew Perski &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">zbigniew.perski at us.edu.pl</A>&gt;
+</I>&gt;<i>                 Subject: [Radartools-users] RAT crashes during inSAR
+</I>&gt;<i>                 coregistration - UPDATE
+</I>&gt;<i>                 To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+</I>&gt;<i>                 Date: Sunday, June 15, 2008, 1:43 AM
+</I>&gt;<i>                 
+</I>&gt;<i>                 Hi,
+</I>&gt;<i>                 
+</I>&gt;<i>                 I have checked the execution of COREG_PATCH with idlde
+</I>&gt;<i>                 and I have got info that:
+</I>&gt;<i>                 
+</I>&gt;<i>                 % Array dimensions must be greater than 0.
+</I>&gt;<i>                 % Execution halted at: COREG_PATCH       279
+</I>&gt;<i>                 
+</I>&gt;<i>                 which is:
+</I>&gt;<i>                 
+</I>&gt;<i>                 ofline    = complexarr(bsx2)
+</I>&gt;<i>                 
+</I>&gt;<i>                 
+</I>&gt;<i>                 _____oryginal message:_________
+</I>&gt;<i>                 
+</I>&gt;<i>                 I am trying to compute TSX interferogram (Strip Map mode) and I ended up
+</I>&gt;<i>                 with error. I did image pair construction and coarse coregistration
+</I>&gt;<i>                 (shift slave image). I started fine (array of patches) coregistration.
+</I>&gt;<i>                 The calculation of offsets for the patches works fine and the plot was
+</I>&gt;<i>                 correctly displayed. The offsets looks correct. When I accepted that and
+</I>&gt;<i>                 started interpolation (warping) the following error message appears:
+</I>&gt;<i>                 
+</I>&gt;<i>                 % Array dimensions must be greater than 0.
+</I>&gt;<i>                 % Execution halted at: COREG_PATCH
+</I>&gt;<i>                                         RAT_EVENT
+</I>&gt;<i>                                         $MAIN$
+</I>&gt;<i>                 
+</I>&gt;<i>                 For me it looks like some variables were
+</I>&gt;<i>                  not
+</I>&gt;<i>                  stored into file/memory.
+</I>&gt;<i>                 Offsets were not stored? Something wrong with file.xdim and
+</I>&gt;<i>                 file.y.dim ??
+</I>&gt;<i>                 
+</I>&gt;<i>                 I am not an expert on IDL but it seems to be something there....
+</I>&gt;<i>                 
+</I>&gt;<i>                 I saw that some months ago somebody posted similar error but without
+</I>&gt;<i>                 clear answer I remember.
+</I>&gt;<i>                 
+</I>&gt;<i>                 Some info: 
+</I>&gt;<i>                 system: linux 32-bit, IDL 6.3
+</I>&gt;<i>                 
+</I>&gt;<i>                 best regards
+</I>&gt;<i>                 
+</I>&gt;<i>                 Zbigniew
+</I>&gt;<i>                 
+</I>&gt;<i>                 
+</I>&gt;<i>                 
+</I>&gt;<i>                 _______________________________________________
+</I>&gt;<i>                 Radartools-users mailing list
+</I>&gt;<i>                 <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i>                 <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i>         
+</I>&gt;<i>         
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000065.html">[Radartools-users] RAT crashes during inSAR coregistration -	UPDATE
+</A></li>
+	<LI>Next message: <A HREF="000067.html">[Radartools-users] please help me ..
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#66">[ date ]</a>
+              <a href="thread.html#66">[ thread ]</a>
+              <a href="subject.html#66">[ subject ]</a>
+              <a href="author.html#66">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

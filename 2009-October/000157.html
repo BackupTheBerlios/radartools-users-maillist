@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] bug in Lee category preserving classification
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C200910200915.43858.andreas.reigber%40dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000156.html">
+   <LINK REL="Next"  HREF="000158.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] bug in Lee category preserving classification</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C200910200915.43858.andreas.reigber%40dlr.de%3E"
+       TITLE="[Radartools-users] bug in Lee category preserving classification">andreas.reigber at dlr.de
+       </A><BR>
+    <I>Tue Oct 20 09:15:43 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000156.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+        <LI>Next message: <A HREF="000158.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#157">[ date ]</a>
+              <a href="thread.html#157">[ thread ]</a>
+              <a href="subject.html#157">[ subject ]</a>
+              <a href="author.html#157">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Clearly a bug!
+
+I'll check that and try so solve the problem. Sounds easy (if I can 
+reconstruct the error). I'll let you know when it works...
+
+Regards,
+Andreas
+
+
+
+Am Monday 19 October 2009 19:40:07 schrieb Benjamin Deschamps:
+&gt;<i> I am running into problems when running a Lee category preserving
+</I>&gt;<i> classification. I am working with RADARAST-2 SLC data (the Mankota, SK
+</I>&gt;<i> demo dataset available here: <A HREF="http://www.radarsat2.info/product/">http://www.radarsat2.info/product/</A>
+</I>&gt;<i> demo_set/) in covariance matrix format. My steps so far are:
+</I>&gt;<i>
+</I>&gt;<i> 1) File &gt; Open External &gt; RADARSAT-2
+</I>&gt;<i> 2) PolSAR &gt; Transform &gt; Vector -&gt; Matrix
+</I>&gt;<i> 3) PolSAR &gt; Classification &gt; Lee category preserving
+</I>&gt;<i>
+</I>&gt;<i> This error message occurs just before the start of the first Wishart
+</I>&gt;<i> itteration:
+</I>&gt;<i>
+</I>&gt;<i> % Attempt to subscript ARR with I is out of range.
+</I>&gt;<i> % Execution halted at: 	BLOCK_TRACE
+</I>&gt;<i> %						DOWISHARTITER
+</I>&gt;<i> %						CLASSIF_LEE
+</I>&gt;<i> %						RAT_EVENT
+</I>&gt;<i> %						IDLRTMAIN
+</I>&gt;<i> %						$MAIN$
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> However, I am able to run a Freeman-Durden decomposition on the same
+</I>&gt;<i> data without any problems.
+</I>&gt;<i>
+</I>&gt;<i> Am I missing something? Thanks in advance for any help or suggestions.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Benjamin Deschamps
+</I>&gt;<i> M.Sc. Candidate
+</I>&gt;<i> Geomatics and Landscape Ecology Research Laboratory (GLEL)
+</I>&gt;<i> Department of Geography and Environmental Studies
+</I>&gt;<i> Carleton University
+</I>&gt;<i> 1125 Colonel By Drive
+</I>&gt;<i> Ottawa, Ontario  Canada  K1S 5B6
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">bdescham at connect.carleton.ca</A>
+</I>&gt;<i> www.glel.carleton.ca
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000156.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+	<LI>Next message: <A HREF="000158.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#157">[ date ]</a>
+              <a href="thread.html#157">[ thread ]</a>
+              <a href="subject.html#157">[ subject ]</a>
+              <a href="author.html#157">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

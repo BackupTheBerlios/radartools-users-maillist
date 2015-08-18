@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users]  ASAR polarisation processing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20%20ASAR%20polarisation%20processing&In-Reply-To=%3C37684.60996.qm%40web24208.mail.ird.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000167.html">
+   <LINK REL="Next"  HREF="000169.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users]  ASAR polarisation processing</H1>
+    <B>vito maddalena</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20%20ASAR%20polarisation%20processing&In-Reply-To=%3C37684.60996.qm%40web24208.mail.ird.yahoo.com%3E"
+       TITLE="[Radartools-users]  ASAR polarisation processing">vitomaddalena at yahoo.it
+       </A><BR>
+    <I>Tue Dec  1 17:36:08 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000167.html">[Radartools-users] Conjugate Function in RAT
+</A></li>
+        <LI>Next message: <A HREF="000169.html">[Radartools-users] ASAR polarisation processing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#168">[ date ]</a>
+              <a href="thread.html#168">[ thread ]</a>
+              <a href="subject.html#168">[ subject ]</a>
+              <a href="author.html#168">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+someone can answer me about the questions in the following?
+Thanks a lot!
+
+Regards,
+Vito
+
+
+--- Mar 24/11/09, vito maddalena &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt; ha scritto:
+
+Da: vito maddalena &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt;
+Oggetto: Re: [Radartools-users] ASAR polarisation processing
+A: &quot;Maxim Neumann&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+Data: Marted&#236; 24 novembre 2009, 13:46
+
+Hi Maxim,
+
+Thank you for your answer.
+
+I have tried the k-means Wishart classification (general) and I have obtained the attached error of the RAT software.
+
+In partuicular I would like to know if RAT is able to process dual polarisation SAR data (HH-HV or VV-VH or VV-HH). In case of affirmative answer, which is the best strategy to process such data? Are there specific processing steps that shall be carried out?
+Which kinds of processing can be perfomed on dual-pol SAR data?
+
+
+Thank you for your help.
+
+Regards,
+
+Vito
+
+--- Lun 23/11/09, Maxim Neumann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt; ha scritto:
+
+Da: Maxim Neumann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+Oggetto: Re: [Radartools-users] ASAR polarisation
+ processing
+A: &quot;vito maddalena&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt;
+Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+Data: Luned&#236; 23 novembre 2009, 18:27
+
+Hi Vito,
+
+I am not sure, but it is possible that the classification procedures are not adapted to dual-pol data.
+Which classification did you try? What was the error message?
+
+Regards,
+Maxim
+
+
+
+
+On Mon, Nov 23, 2009 at 1:20 AM, vito maddalena &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">vitomaddalena at yahoo.it</A>&gt; wrote:
+
+
+Dear All,
+
+I&#160; have been using RAT sw for a few weeks and I would like to do some questions about ASAR_APS-HH_HV dual-pol image processing.
+
+I have first construct the Dual-Pol vector, I think a 2-element scattering vector, and then I have generated the covariance matrix (using a presumming factor of 2x10).
+
+
+At this point I have 4 channels of complex data.
+
+If I try to perform a general classification at this point, the sw crashes in any case.
+
+I think there is a conceptual problem that I ignore.
+
+How to do therefore a classification of a dual-pol ASAR image?
+
+
+Thank you in advance
+Regards!
+
+Vito
+
+
+
+
+
+
+
+
+      
+_______________________________________________
+
+Radartools-users mailing list
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+
+
+
+
+
+
+
+
+
+      
+
+
+      
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20091201/bb044ca4/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20091201/bb044ca4/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: crash_polsar.PNG
+Type: image/png
+Size: 14204 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20091201/bb044ca4/attachment.png">https://lists.berlios.de/pipermail/radartools-users/attachments/20091201/bb044ca4/attachment.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000167.html">[Radartools-users] Conjugate Function in RAT
+</A></li>
+	<LI>Next message: <A HREF="000169.html">[Radartools-users] ASAR polarisation processing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#168">[ date ]</a>
+              <a href="thread.html#168">[ thread ]</a>
+              <a href="subject.html#168">[ subject ]</a>
+              <a href="author.html#168">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

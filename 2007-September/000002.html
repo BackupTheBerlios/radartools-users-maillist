@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] SLC vector to MLC matrix then MLC matrix to	MLC vector??????
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-September/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20SLC%20vector%20to%20MLC%20matrix%20then%20MLC%20matrix%20to%0A%09MLC%20vector%3F%3F%3F%3F%3F%3F&In-Reply-To=%3Cd6a8b87d0709190102h33819e67w6e19bcd73d61c8b0%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] SLC vector to MLC matrix then MLC matrix to	MLC vector??????</H1>
+    <B>Maxim Neumann</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20SLC%20vector%20to%20MLC%20matrix%20then%20MLC%20matrix%20to%0A%09MLC%20vector%3F%3F%3F%3F%3F%3F&In-Reply-To=%3Cd6a8b87d0709190102h33819e67w6e19bcd73d61c8b0%40mail.gmail.com%3E"
+       TITLE="[Radartools-users] SLC vector to MLC matrix then MLC matrix to	MLC vector??????">maxn at cs.tu-berlin.de
+       </A><BR>
+    <I>Wed Sep 19 10:02:52 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000003.html">[Radartools-users] PALSAR data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Tumen,
+
+probably it is better for you to use either &quot;General--&gt;Resize Image&quot;,
+or &quot;General--&gt;Presumming&quot; which average your SLC's if you provide
+smaller image sizes for your data.
+Take care that multi--looking on the matrices and the vectors are two
+very different operations: they are not interchangeable and do have
+very different meanings.
+The function for transforming from a matrix to vector was intended
+only for rank 1 matrices (i.e. no multi--looking before), and
+therefore it shouldn't be used with MLC matrices (we should have noted
+it somewhere in the docu!), and it is neither really reasonable.
+
+Greetings to Ulan-Ude,
+Maxim
+
+
+On 9/19/07, Tumen N. Chymitdorzhiev &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">tchimit at pres.bscnet.ru</A>&gt; wrote:
+&gt;<i> Hi!
+</I>&gt;<i> I planing to create HV scattering vector in MLC, may be to transform to
+</I>&gt;<i> the covariance matrix and then this matrix to vector or must use other
+</I>&gt;<i> procedure?
+</I>&gt;<i>
+</I>&gt;<i> Tumen
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000003.html">[Radartools-users] PALSAR data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

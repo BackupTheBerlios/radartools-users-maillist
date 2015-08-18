@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] doubts in converting slant to ground imagens
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20doubts%20in%20converting%20slant%20to%20ground%20imagens&In-Reply-To=%3CEB0D05304FEF434A9309F52A071B3DD47F849C%40ebox-prod-srv01.win.su.se%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000213.html">
+   <LINK REL="Next"  HREF="000215.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] doubts in converting slant to ground imagens</H1>
+    <B>Ian Brown</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20doubts%20in%20converting%20slant%20to%20ground%20imagens&In-Reply-To=%3CEB0D05304FEF434A9309F52A071B3DD47F849C%40ebox-prod-srv01.win.su.se%3E"
+       TITLE="[Radartools-users] doubts in converting slant to ground imagens">Ian.Brown at natgeo.su.se
+       </A><BR>
+    <I>Wed Jun 19 13:04:39 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000213.html">[Radartools-users] doubts in converting slant to ground imagens
+</A></li>
+        <LI>Next message: <A HREF="000215.html">[Radartools-users] RAT for 64-bit OS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#214">[ date ]</a>
+              <a href="thread.html#214">[ thread ]</a>
+              <a href="subject.html#214">[ subject ]</a>
+              <a href="author.html#214">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear Mariane,
+The range resolution is typically worse than azimuth by a factor of as much as 8 for ALOS PALSAR. This means to create (nearly) square pixels you will have to resample. This is often done during multi-looking and would mean a reduction of the azimuth resolution by a factor of 7 or 8. If you reduce the range resolution to the azimuth resolution you are in effect oversampling in range. You might get square pixels but they will be artificially high resolution.
+
+I hope that answers your question.
+Ian
+
+
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users-bounces at lists.berlios.de</A> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users-bounces at lists.berlios.de</A>] On Behalf Of Mariane S. Reis
+Sent: den 14 juni 2013 21:05
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+Subject: [Radartools-users] doubts in converting slant to ground imagens
+
+I was trying to convert my ALOS-PALSAR image, FBD 1.1 from slant range to ground range, and it happend that the process only give me a reasonable result (the features in the image look like the features in field) if the &quot;output pixel spacing&quot; is similar to the image's azimuth pixel spacing. Is there any reason to that? Can someone explain to me what is the effect of changing the output pixel size in the process?
+
+
+Thanks
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20130619/9352b3fb/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20130619/9352b3fb/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000213.html">[Radartools-users] doubts in converting slant to ground imagens
+</A></li>
+	<LI>Next message: <A HREF="000215.html">[Radartools-users] RAT for 64-bit OS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#214">[ date ]</a>
+              <a href="thread.html#214">[ thread ]</a>
+              <a href="subject.html#214">[ subject ]</a>
+              <a href="author.html#214">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

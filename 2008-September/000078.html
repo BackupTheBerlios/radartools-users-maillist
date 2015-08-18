@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Adding functions to RAT
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Adding%20functions%20to%20RAT&In-Reply-To=%3C270835.20254.qm%40web38002.mail.mud.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000077.html">
+   <LINK REL="Next"  HREF="000081.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Adding functions to RAT</H1>
+    <B>Ricardo Veiga</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Adding%20functions%20to%20RAT&In-Reply-To=%3C270835.20254.qm%40web38002.mail.mud.yahoo.com%3E"
+       TITLE="[Radartools-users] Adding functions to RAT">rveiga at yahoo.com
+       </A><BR>
+    <I>Fri Sep 12 04:33:16 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000077.html">[Radartools-users] Radartools-users Digest, Vol 14, Issue 1
+</A></li>
+        <LI>Next message: <A HREF="000081.html">[Radartools-users] about PolSAR modual
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#78">[ date ]</a>
+              <a href="thread.html#78">[ thread ]</a>
+              <a href="subject.html#78">[ subject ]</a>
+              <a href="author.html#78">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Wei,
+
+1 - To add a new function to RAT menu you need to edit the rat.pro file and simply add your line like the example bellow in the CASE logic:
+
+'Coherence estimation.Boxcar': polin_coh_mean	
+
+The first string is the menu text and the second string is the function name.
+
+The function file has to be compiled already or to be in the search path.
+
+2 - All data processed by RAT is in its special structure. It is not a simple one but you can learn how it is implemented by following the code and inspecting variables while running a test case. That's how I'm learning it right now. How easy it will be depends on your expertise with IDL.
+
+3 - To be more helpfull and brief, I need more details from you.
+
+
+Good luck!
+
+Ricardo Veiga
+&gt;<i> &gt; 
+</I>&gt;<i> &gt; Hi radartools members!
+</I>&gt;<i> &gt;      How are you? I am a Chinese graduate student and
+</I>&gt;<i> my name is Litingwei. 
+</I>&gt;<i> Your RAT gives me great help and Thank you very much. Now I
+</I>&gt;<i> have two 
+</I>&gt;<i> questions:
+</I>&gt;<i> &gt;   Firstly.Recently,I have written a IDL programm which
+</I>&gt;<i> is used to estimate 
+</I>&gt;<i> the coherence and I want to add to the RAT,but I do not
+</I>&gt;<i> know how to do.Could 
+</I>&gt;<i> I add my IDL progamm to the RAT? If could,please tell me
+</I>&gt;<i> how to?
+</I>&gt;<i> &gt;   Secondly.I want to use the two complex SAR iamges
+</I>&gt;<i> data which is 
+</I>&gt;<i> registrated by the RAT,How can I get them? How the two
+</I>&gt;<i> registrated SAR images 
+</I>&gt;<i> are saved?
+</I>&gt;<i> &gt;   Look forward to your reply!
+</I>&gt;<i> &gt; Sincerely yours
+</I>&gt;<i> &gt; Li Ting Wei
+</I>&gt;<i> &gt; Best regards.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt;        
+</I>&gt;<i> &gt; ---------------------------------
+</I>&gt;<i> &gt;  ????????????
+</I>&gt;<i> &gt; -------------- next part --------------
+</I>&gt;<i> &gt; An HTML attachment was scrubbed...
+</I>&gt;<i> &gt; URL: <A HREF="https://lists.berlios.de/pipermail/radartools-">https://lists.berlios.de/pipermail/radartools-</A>
+</I>&gt;<i> users/attachments/20080909/89319405/attachment-0001.html 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; ------------------------------
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Message: 2
+</I>&gt;<i> &gt; Date: Wed, 10 Sep 2008 09:52:26 +0200
+</I>&gt;<i> &gt; From: &quot;Maxim Neumann&quot;
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+</I>&gt;<i> &gt; Subject: Re: [Radartools-users] two questions about
+</I>&gt;<i> RAT
+</I>&gt;<i> &gt; To: &quot; ?? ? &quot;
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">litingwei197882 at yahoo.com.cn</A>&gt;
+</I>&gt;<i> &gt; Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; Message-ID:
+</I>&gt;<i> &gt;
+</I>&gt;<i> 	&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">d6a8b87d0809100052k5209bc38lfb310eed82c1e4fd at mail.gmail.com</A>&gt;
+</I>&gt;<i> &gt; Content-Type: text/plain; charset=&quot;utf-8&quot;
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Hi Li Ting Wei,
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; it's nice that you use RAT and want to extend it.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; &gt; Firstly.Recently,I have written a IDL programm
+</I>&gt;<i> which is used to estimate
+</I>&gt;<i> &gt; &gt; the coherence and I want to add to the RAT,but I
+</I>&gt;<i> do not know how to 
+</I>&gt;<i> do.Could
+</I>&gt;<i> &gt; &gt; I add my IDL progamm to the RAT? If could,please
+</I>&gt;<i> tell me how to?
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; At the page:
+</I>&gt;<i> &gt; <A HREF="http://www.cv.tu-berlin.de/rat/manual.php">http://www.cv.tu-berlin.de/rat/manual.php</A>
+</I>&gt;<i> &gt; there are several tutorial/info pages about how to
+</I>&gt;<i> extend Rat. First you
+</I>&gt;<i> &gt; should consult
+</I>&gt;<i> &gt;
+</I>&gt;<i> <A HREF="http://www.cv.tu-berlin.de/rat/manual.php?rat_inputfilter">http://www.cv.tu-berlin.de/rat/manual.php?rat_inputfilter</A>
+</I>&gt;<i> &gt; You need of course good IDL programming skills, but
+</I>&gt;<i> this you probably have.
+</I>&gt;<i> &gt; You can also check other functions, how they are
+</I>&gt;<i> written. You can just take
+</I>&gt;<i> &gt; one function which does something similar to yours and
+</I>&gt;<i> try to modify it so
+</I>&gt;<i> &gt; that you can include your own function. If you are
+</I>&gt;<i> writing a coherence
+</I>&gt;<i> &gt; estimation function for InSAR, you could start e.g.
+</I>&gt;<i> with
+</I>&gt;<i> &gt;
+</I>&gt;<i> <A HREF="http://svn.berlios.de/wsvn/radartools/trunk/insar/coh_mean.pro">http://svn.berlios.de/wsvn/radartools/trunk/insar/coh_mean.pro</A>
+</I>&gt;<i> &gt; or, if it's more for PolInSAR you can check
+</I>&gt;<i> &gt;
+</I>&gt;<i> <A HREF="http://svn.berlios.de/wsvn/radartools/trunk/polinsar/polin_coh_mean.pro">http://svn.berlios.de/wsvn/radartools/trunk/polinsar/polin_coh_mean.pro</A>
+</I>&gt;<i> &gt; If it all works and your program brings interesting
+</I>&gt;<i> new functionality we can
+</I>&gt;<i> &gt; help you to include it into the next RAT release.
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Secondly.I want to use the two complex SAR iamges data
+</I>&gt;<i> which is registrated
+</I>&gt;<i> &gt; &gt; by the RAT,How can I get them? How the two
+</I>&gt;<i> registrated SAR images are 
+</I>&gt;<i> saved?
+</I>&gt;<i> &gt; &gt;
+</I>&gt;<i> &gt; If you mean what's the file format of RAT data
+</I>&gt;<i> files, you can check it also
+</I>&gt;<i> &gt; here (see the links to &quot;RAT file format&quot;):
+</I>&gt;<i> &gt; <A HREF="http://www.cv.tu-berlin.de/rat/manual.php">http://www.cv.tu-berlin.de/rat/manual.php</A>
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; Good luck!
+</I>&gt;<i> &gt; Best regards,
+</I>&gt;<i> &gt; Maxim
+</I>&gt;<i> &gt; -------------- next part --------------
+</I>&gt;<i> &gt; An HTML attachment was scrubbed...
+</I>&gt;<i> &gt; URL: <A HREF="https://lists.berlios.de/pipermail/radartools-">https://lists.berlios.de/pipermail/radartools-</A>
+</I>&gt;<i> users/attachments/20080910/9864965d/attachment-0001.html 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; ------------------------------
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Radartools-users mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; 
+</I>&gt;<i> &gt; End of Radartools-users Digest, Vol 14, Issue 1
+</I>&gt;<i> &gt; ***********************************************
+</I>&gt;<i> &gt; 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> -- 
+</I>&gt;<i> P. Jayaprasad, 
+</I>&gt;<i> Scientist-SE
+</I>&gt;<i> Geo-Informatics and Databases Division
+</I>&gt;<i> GTDG / RESA
+</I>&gt;<i> Space Applications Centre (ISRO), 
+</I>&gt;<i> Ahmedabad. 380 015. Gujarat.
+</I>&gt;<i> Phone: 079 2691 4360 (O), 26861404 (R). Fax:079 26915846
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> NOTICE: This communication is meant only for the
+</I>&gt;<i> addressee(s) named 
+</I>&gt;<i> above and may contain information which is confidential
+</I>&gt;<i> and/or legally 
+</I>&gt;<i> privileged. If you are not the named addressee(s), or the
+</I>&gt;<i> agent 
+</I>&gt;<i> responsible for receiving and delivering this communication
+</I>&gt;<i> to the 
+</I>&gt;<i> named addressee(s), this communication has been sent to you
+</I>&gt;<i> in error. 
+</I>&gt;<i> If so, kindly notify the sender and delete the information
+</I>&gt;<i> immediately. 
+</I>&gt;<i> Unauthorised dissemination, distribution, copying or
+</I>&gt;<i> reliance on this 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> Message: 2
+</I>&gt;<i> Date: Thu, 11 Sep 2008 11:05:44 +0200
+</I>&gt;<i> From: &quot;Maxim Neumann&quot;
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">maxn at cs.tu-berlin.de</A>&gt;
+</I>&gt;<i> Subject: Re: [Radartools-users] Radartools-users Digest,
+</I>&gt;<i> Vol 14, Issue
+</I>&gt;<i> 	1
+</I>&gt;<i> To: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">jayaprasadp at sac.isro.gov.in</A>
+</I>&gt;<i> Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>
+</I>&gt;<i> Message-ID:
+</I>&gt;<i> 	&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">d6a8b87d0809110205w2552c975rcf7c70f46595bf85 at mail.gmail.com</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;utf-8&quot;
+</I>&gt;<i> 
+</I>&gt;<i> &gt; What is the status of DEM generation and geocoding
+</I>&gt;<i> module of RAT
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> RAT does not provide DEM generation and geocoding
+</I>&gt;<i> functionality. At least
+</I>&gt;<i> not yet. It may be developed in the future.
+</I>&gt;<i> 
+</I>&gt;<i> Regards,
+</I>&gt;<i> Maxim
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> An HTML attachment was scrubbed...
+</I>&gt;<i> URL:
+</I>&gt;<i> <A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20080911/438db441/attachment-0001.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20080911/438db441/attachment-0001.html</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> ------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> End of Radartools-users Digest, Vol 14, Issue 2
+</I>&gt;<i> ***********************************************
+</I>
+
+      
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000077.html">[Radartools-users] Radartools-users Digest, Vol 14, Issue 1
+</A></li>
+	<LI>Next message: <A HREF="000081.html">[Radartools-users] about PolSAR modual
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#78">[ date ]</a>
+              <a href="thread.html#78">[ thread ]</a>
+              <a href="subject.html#78">[ subject ]</a>
+              <a href="author.html#78">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

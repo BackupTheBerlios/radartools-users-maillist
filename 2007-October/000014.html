@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Fw:  Fw:  Fw:  IDIOT - baseline value problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20Fw%3A%20%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C000b01c81ae7%24b45eac10%24a60aa8c0%40pcsven%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000013.html">
+   <LINK REL="Next"  HREF="000015.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Fw:  Fw:  Fw:  IDIOT - baseline value problems</H1>
+    <B>Sven Borgstr&#246;m</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20Fw%3A%20%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C000b01c81ae7%24b45eac10%24a60aa8c0%40pcsven%3E"
+       TITLE="[Radartools-users] Fw:  Fw:  Fw:  IDIOT - baseline value problems">sven at ov.ingv.it
+       </A><BR>
+    <I>Tue Oct 30 12:26:22 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000013.html">[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+</A></li>
+        <LI>Next message: <A HREF="000015.html">[Radartools-users] Fw: Fw: Fw: IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14">[ date ]</a>
+              <a href="thread.html#14">[ thread ]</a>
+              <a href="subject.html#14">[ subject ]</a>
+              <a href="author.html#14">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Andreas,
+
+first of all thank you for checking my data.
+
+Coming to your question, I got the SLC images by the EarthView APP modulus 
+from the Canadian MDA Corporation (formerly Vexcel/Atlantis): probably the 
+output format is changed by this software in some way and so Idiot is not 
+able to read the data.
+
+As to the Doppler differences, I'm not able to say anything more than what I 
+saw on the Idiot preprocessing mask. I only know the Doppler problems were 
+solved with ENVISAT, isn't it?
+
+Thank you again for spending your time with my data.
+Sven.
+
+
+----- Original Message ----- 
+From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+Sent: Monday, October 29, 2007 5:03 PM
+Subject: Re: [Radartools-users] Fw: Fw: IDIOT - baseline value problems
+
+
+Hi Sven,
+
+I think there is a problem with your data. After some investigations, I
+located wrongly written time delays in the data header. These are used to
+calculate the distance between satellite orbit and imaged scene. Normally 
+the
+smallest distance comes as the first element (corresponding to the first 
+data
+column), but in your case the values are reverse!!!?
+
+r0 = 870378.28, 866000.33, 861614.52, 857228.78, 852843.04, 848457.30,
+844071.49, 39685.75, 835300.01, 830914.20, 826528.46
+
+Due to this, Idiot first misaligns the DEM and then is confused because all
+distances are going wrong (including the baseline calculation for which the
+DEM is needed). So the question is: From where you got these data??? Who
+processed them??? Formatting issues are an old story within ESA, especially
+concerning ERS 1/2, but I thought with ENVISAT everything got better...
+
+The only possibility I see is to take not the first but the smallest element
+of the 11 values. Not really clean programming, but probably more robust.
+I'll try...
+
+Btw, there is a second problem: These data have quite large Doppler
+differences. This is not obvious from the first coarse check at the 
+beginning
+of the processing, but more precise calculations later reveal a problem in
+parts of the image. The result will be decorrelation is affected areas.
+
+Greetings,
+Anderl
+
+
+
+
+
+Am Montag 29 Oktober 2007 schrieb Sven Borgstr&#246;m:
+&gt;<i> Hi Andreas,
+</I>&gt;<i>
+</I>&gt;<i> just now I've finished to upload on your ftp the two *.N1 files of the SAR
+</I>&gt;<i> scenes
+</I>&gt;<i>
+</I>&gt;<i> 31-03-2005;
+</I>&gt;<i> 16-11-2006;
+</I>&gt;<i> (desc. - 17 m b perp.).
+</I>&gt;<i>
+</I>&gt;<i> If you have time to process the data, I want to thank you in advance.
+</I>&gt;<i>
+</I>&gt;<i> In this case, you need also the *.hgt SRTM3 files to subtract topography;
+</I>&gt;<i> the ones I'm using, covering all my area of interest, are:
+</I>&gt;<i>
+</I>&gt;<i> N40E013
+</I>&gt;<i> N40E014
+</I>&gt;<i> N40E015
+</I>&gt;<i> N40E016
+</I>&gt;<i> N41E013
+</I>&gt;<i> N41E014
+</I>&gt;<i> N41E015
+</I>&gt;<i> N41E016
+</I>&gt;<i>
+</I>&gt;<i> Do yuo want me to upload on your ftp directly the unzipped files?
+</I>&gt;<i>
+</I>&gt;<i> I'm at your disposal for anything you need so in case let me know.
+</I>&gt;<i>
+</I>&gt;<i> Thanks again.
+</I>&gt;<i> Sven.
+</I>&gt;<i>
+</I>&gt;<i> P.S.: If everything goes well, you should get about two fringes somewhere
+</I>&gt;<i> close to the coastline, at the west (in REAL, not SAR geometry) of Mt.
+</I>&gt;<i> Vesuvius: I know it as I have also other geodetical (mainly GPS and
+</I>&gt;<i> leveling) data of the area.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----- Original Message -----
+</I>&gt;<i> From: &quot;Andreas Reigber&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">anderl at fpk.tu-berlin.de</A>&gt;
+</I>&gt;<i> To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">radartools-users at lists.berlios.de</A>&gt;
+</I>&gt;<i> Sent: Friday, October 26, 2007 1:07 PM
+</I>&gt;<i> Subject: Re: [Radartools-users] Fw: IDIOT - baseline value problems
+</I>&gt;<i>
+</I>&gt;<i> &gt; Hi Sven,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; FIRST PAIR (asc) - FULL SCENE: unlike the first time when I wrote to 
+</I>&gt;<i> &gt;&gt; the
+</I>&gt;<i> &gt;&gt; do you think this could be related to coregistration problems?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Yes and no. The coregistration in idiot is performed entirely using the
+</I>&gt;<i> &gt; orbit
+</I>&gt;<i> &gt; information and obviously something goes wrong here.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; SECOND PAIR (desc) - FULL SCENE: Idiot stops giving always the same
+</I>&gt;<i> &gt;&gt; error message (exceeding critical baseline) processing a SAR pair which
+</I>&gt;<i> &gt;&gt; has a b
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Something strange happens also when using my Windows partition, where I
+</I>&gt;<i> &gt;&gt; this OS, my question is: &quot;Is the problem really related to getorb, as I
+</I>&gt;<i> &gt;&gt; don't use it under Windows?&quot;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; This was a good idea, and I think you're right. getorb can't be the
+</I>&gt;<i> &gt; problem.
+</I>&gt;<i> &gt; So it must be definetly an error in idiot.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Last but not least, about sub-scenes: for both SAR pairs and processing
+</I>&gt;<i> &gt;&gt; them under both Fedora and Windows, Idiot is not able to process data,
+</I>&gt;<i> &gt;&gt; giving a READU error message and quitting immediately.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; As I said, idiot requires standard ENVISAT files. Cropping them usually
+</I>&gt;<i> &gt; changes the formating and idiot is not able to use them anymore. This is
+</I>&gt;<i> &gt; normal.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Granted that I can be wrong somewhere using Idiot, do you have more
+</I>&gt;<i> &gt;&gt; suggestions? If you want (and if you also have time, of course) I could
+</I>&gt;<i> &gt;&gt; send
+</I>&gt;<i> &gt;&gt; you the data of one pair via FTP, just for a test. What do you think?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; You should not be able to do something wrong with idiot :-). Its concept
+</I>&gt;<i> &gt; is to
+</I>&gt;<i> &gt; be totally simple. I think there is a bug somewhere which I should
+</I>&gt;<i> &gt; correct.
+</I>&gt;<i> &gt; If possible, could you please upload the second pair (the one with
+</I>&gt;<i> &gt; 'baseline
+</I>&gt;<i> &gt; too large) to our ftp (<A HREF="ftp://ftp.fpk.tu-berlin.de/incoming">ftp://ftp.fpk.tu-berlin.de/incoming</A>) and I'll see
+</I>&gt;<i> &gt; what
+</I>&gt;<i> &gt; I can do. If you want I can also have a look on the first pair, but 
+</I>&gt;<i> &gt; maybe
+</I>&gt;<i> &gt; lets start with the big problem...
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Don't worry about writing email, your input is really important for us!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Greetings,
+</I>&gt;<i> &gt; Anderl
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; P.S.: The incoming directory on our ftp is read protected, so nobody can
+</I>&gt;<i> &gt; download from there.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; --
+</I>&gt;<i> &gt; ----------------------------------------------------------------
+</I>&gt;<i> &gt; Dr. Andreas Reigber           Berlin University of Technology
+</I>&gt;<i> &gt;                              Computer Vision and Remote Sensing
+</I>&gt;<i> &gt; Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+</I>&gt;<i> &gt; Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+</I>&gt;<i> &gt; ----------------------------------------------------------------
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Use encrypted email!                       My key ID: 0x279F93EB
+</I>&gt;<i> &gt; Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Radartools-users mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Radartools-users mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A>
+</I>
+
+
+-- 
+----------------------------------------------------------------
+Dr. Andreas Reigber           Berlin University of Technology
+                              Computer Vision and Remote Sensing
+Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+----------------------------------------------------------------
+
+Use encrypted email!                       My key ID: 0x279F93EB
+Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+
+
+_______________________________________________
+Radartools-users mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">Radartools-users at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">https://lists.berlios.de/mailman/listinfo/radartools-users</A> 
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000013.html">[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+</A></li>
+	<LI>Next message: <A HREF="000015.html">[Radartools-users] Fw: Fw: Fw: IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#14">[ date ]</a>
+              <a href="thread.html#14">[ thread ]</a>
+              <a href="subject.html#14">[ subject ]</a>
+              <a href="author.html#14">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

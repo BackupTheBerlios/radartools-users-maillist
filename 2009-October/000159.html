@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] bug in Lee category preserving classification
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C01419C8A-DAB8-4F20-ADB4-97D32840C8E9%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000158.html">
+   <LINK REL="Next"  HREF="000160.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] bug in Lee category preserving classification</H1>
+    <B>Benjamin Deschamps</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C01419C8A-DAB8-4F20-ADB4-97D32840C8E9%40gmail.com%3E"
+       TITLE="[Radartools-users] bug in Lee category preserving classification">bdesc100 at gmail.com
+       </A><BR>
+    <I>Thu Oct 22 17:40:36 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000158.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+        <LI>Next message: <A HREF="000160.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Andreas,
+
+Thanks for your quick response, as usual.
+
+I used no pre-summing (1x1) when converting the scattering vector to  
+scattering matrix. I am using all the default values in the Lee  
+category preserving classification.
+
+I get a different error when I don't select the option to &quot;Merge  
+Classes after Iteration (slow but better)&quot;:
+
+% Array subscript for NEWMEAN must have same size as source expression.
+% Execution halted at: 	CLASSMERGING
+%						CLASSIF_LEE
+%						RAT_EVENT
+%						IDLRTMAIN
+%						$MAIN$
+
+When that option IS selected, I get the error that I reported earlier.  
+Otherwise all defaults (Freeman-Durden, 0.5 threshold, 16 external  
+classes, 15 internal, 4 itterations).
+
+When the covariance matrix is symmetrized, the classification runs  
+fine, a good workaround for now.
+
+Benjamin
+
+
+
+&gt;<i> Hi Benjamin,
+</I>&gt;<i>
+</I>&gt;<i> I was able to reproduce an error, but not the same one you got.  
+</I>&gt;<i> Could you
+</I>&gt;<i> please tell me which parameters you used in step 2 and 3?
+</I>&gt;<i>
+</I>&gt;<i> Additionally, you can try to symmetrisise your data with the function
+</I>&gt;<i>
+</I>&gt;<i> PolSAR &gt; Calibtation &gt; Cross-polar symmetrisation
+</I>&gt;<i>
+</I>&gt;<i> Probably this will be a temporary solution, but I'm not sure.
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Andreas
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Am Monday 19 October 2009 19:40:07 schrieb Benjamin Deschamps:
+</I>&gt;&gt;<i> I am running into problems when running a Lee category preserving
+</I>&gt;&gt;<i> classification. I am working with RADARAST-2 SLC data (the Mankota,  
+</I>&gt;&gt;<i> SK
+</I>&gt;&gt;<i> demo dataset available here: <A HREF="http://www.radarsat2.info/product/">http://www.radarsat2.info/product/</A>
+</I>&gt;&gt;<i> demo_set/) in covariance matrix format. My steps so far are:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 1) File &gt; Open External &gt; RADARSAT-2
+</I>&gt;&gt;<i> 2) PolSAR &gt; Transform &gt; Vector -&gt; Matrix
+</I>&gt;&gt;<i> 3) PolSAR &gt; Classification &gt; Lee category preserving
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This error message occurs just before the start of the first Wishart
+</I>&gt;&gt;<i> itteration:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> % Attempt to subscript ARR with I is out of range.
+</I>&gt;&gt;<i> % Execution halted at: 	BLOCK_TRACE
+</I>&gt;&gt;<i> %						DOWISHARTITER
+</I>&gt;&gt;<i> %						CLASSIF_LEE
+</I>&gt;&gt;<i> %						RAT_EVENT
+</I>&gt;&gt;<i> %						IDLRTMAIN
+</I>&gt;&gt;<i> %						$MAIN$
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> However, I am able to run a Freeman-Durden decomposition on the same
+</I>&gt;&gt;<i> data without any problems.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Am I missing something? Thanks in advance for any help or  
+</I>&gt;&gt;<i> suggestions.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Benjamin Deschamps
+</I>&gt;&gt;<i> M.Sc. Candidate
+</I>&gt;&gt;<i> Geomatics and Landscape Ecology Research Laboratory (GLEL)
+</I>&gt;&gt;<i> Department of Geography and Environmental Studies
+</I>&gt;&gt;<i> Carleton University
+</I>&gt;&gt;<i> 1125 Colonel By Drive
+</I>&gt;&gt;<i> Ottawa, Ontario  Canada  K1S 5B6
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">bdescham at connect.carleton.ca</A>
+</I>&gt;&gt;<i> www.glel.carleton.ca
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20091022/3ee54012/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20091022/3ee54012/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000158.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+	<LI>Next message: <A HREF="000160.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#159">[ date ]</a>
+              <a href="thread.html#159">[ thread ]</a>
+              <a href="subject.html#159">[ subject ]</a>
+              <a href="author.html#159">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

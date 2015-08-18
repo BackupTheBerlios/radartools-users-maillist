@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] bug in Lee category preserving classification
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C200910221752.23228.andreas.reigber%40dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000159.html">
+   <LINK REL="Next"  HREF="000161.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] bug in Lee category preserving classification</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20bug%20in%20Lee%20category%20preserving%20classification&In-Reply-To=%3C200910221752.23228.andreas.reigber%40dlr.de%3E"
+       TITLE="[Radartools-users] bug in Lee category preserving classification">andreas.reigber at dlr.de
+       </A><BR>
+    <I>Thu Oct 22 17:52:23 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000159.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+        <LI>Next message: <A HREF="000161.html">[Radartools-users] I would like to join in radartools-users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#160">[ date ]</a>
+              <a href="thread.html#160">[ thread ]</a>
+              <a href="subject.html#160">[ subject ]</a>
+              <a href="author.html#160">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Benjamin,
+
+An even quicker response, since something got now very clear: You should _not_ 
+use 1x1 presumming. RAT allows that, but it is mathematical nonsense - you 
+get singular matrices without much meaning, it is like doing statistics over 
+a single value... For 3x3 matrix the minimum is 9 looks (e.g. 3x3 
+presumming), but I recommend significantly more, something around 50 looks 
+(7x7) is much more reasonable!
+
+Symmetrisation makes always sense: less data with the same information 
+content.
+
+If I have some time I will nevertheless try to find the bug.
+
+Regards,
+Andreas
+
+
+Am Thursday 22 October 2009 17:40:36 schrieb Benjamin Deschamps:
+&gt;<i> Andreas,
+</I>&gt;<i>
+</I>&gt;<i> Thanks for your quick response, as usual.
+</I>&gt;<i>
+</I>&gt;<i> I used no pre-summing (1x1) when converting the scattering vector to
+</I>&gt;<i> scattering matrix. I am using all the default values in the Lee
+</I>&gt;<i> category preserving classification.
+</I>&gt;<i>
+</I>&gt;<i> I get a different error when I don't select the option to &quot;Merge
+</I>&gt;<i> Classes after Iteration (slow but better)&quot;:
+</I>&gt;<i>
+</I>&gt;<i> % Array subscript for NEWMEAN must have same size as source expression.
+</I>&gt;<i> % Execution halted at: 	CLASSMERGING
+</I>&gt;<i> %						CLASSIF_LEE
+</I>&gt;<i> %						RAT_EVENT
+</I>&gt;<i> %						IDLRTMAIN
+</I>&gt;<i> %						$MAIN$
+</I>&gt;<i>
+</I>&gt;<i> When that option IS selected, I get the error that I reported earlier.
+</I>&gt;<i> Otherwise all defaults (Freeman-Durden, 0.5 threshold, 16 external
+</I>&gt;<i> classes, 15 internal, 4 itterations).
+</I>&gt;<i>
+</I>&gt;<i> When the covariance matrix is symmetrized, the classification runs
+</I>&gt;<i> fine, a good workaround for now.
+</I>&gt;<i>
+</I>&gt;<i> Benjamin
+</I>&gt;<i>
+</I>&gt;<i> &gt; Hi Benjamin,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I was able to reproduce an error, but not the same one you got.
+</I>&gt;<i> &gt; Could you
+</I>&gt;<i> &gt; please tell me which parameters you used in step 2 and 3?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Additionally, you can try to symmetrisise your data with the function
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; PolSAR &gt; Calibtation &gt; Cross-polar symmetrisation
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Probably this will be a temporary solution, but I'm not sure.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Regards,
+</I>&gt;<i> &gt; Andreas
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Am Monday 19 October 2009 19:40:07 schrieb Benjamin Deschamps:
+</I>&gt;<i> &gt;&gt; I am running into problems when running a Lee category preserving
+</I>&gt;<i> &gt;&gt; classification. I am working with RADARAST-2 SLC data (the Mankota,
+</I>&gt;<i> &gt;&gt; SK
+</I>&gt;<i> &gt;&gt; demo dataset available here: <A HREF="http://www.radarsat2.info/product/">http://www.radarsat2.info/product/</A>
+</I>&gt;<i> &gt;&gt; demo_set/) in covariance matrix format. My steps so far are:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; 1) File &gt; Open External &gt; RADARSAT-2
+</I>&gt;<i> &gt;&gt; 2) PolSAR &gt; Transform &gt; Vector -&gt; Matrix
+</I>&gt;<i> &gt;&gt; 3) PolSAR &gt; Classification &gt; Lee category preserving
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; This error message occurs just before the start of the first Wishart
+</I>&gt;<i> &gt;&gt; itteration:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; % Attempt to subscript ARR with I is out of range.
+</I>&gt;<i> &gt;&gt; % Execution halted at: 	BLOCK_TRACE
+</I>&gt;<i> &gt;&gt; %						DOWISHARTITER
+</I>&gt;<i> &gt;&gt; %						CLASSIF_LEE
+</I>&gt;<i> &gt;&gt; %						RAT_EVENT
+</I>&gt;<i> &gt;&gt; %						IDLRTMAIN
+</I>&gt;<i> &gt;&gt; %						$MAIN$
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; However, I am able to run a Freeman-Durden decomposition on the same
+</I>&gt;<i> &gt;&gt; data without any problems.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Am I missing something? Thanks in advance for any help or
+</I>&gt;<i> &gt;&gt; suggestions.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Benjamin Deschamps
+</I>&gt;<i> &gt;&gt; M.Sc. Candidate
+</I>&gt;<i> &gt;&gt; Geomatics and Landscape Ecology Research Laboratory (GLEL)
+</I>&gt;<i> &gt;&gt; Department of Geography and Environmental Studies
+</I>&gt;<i> &gt;&gt; Carleton University
+</I>&gt;<i> &gt;&gt; 1125 Colonel By Drive
+</I>&gt;<i> &gt;&gt; Ottawa, Ontario  Canada  K1S 5B6
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">bdescham at connect.carleton.ca</A>
+</I>&gt;<i> &gt;&gt; www.glel.carleton.ca
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000159.html">[Radartools-users] bug in Lee category preserving classification
+</A></li>
+	<LI>Next message: <A HREF="000161.html">[Radartools-users] I would like to join in radartools-users
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#160">[ date ]</a>
+              <a href="thread.html#160">[ thread ]</a>
+              <a href="subject.html#160">[ subject ]</a>
+              <a href="author.html#160">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

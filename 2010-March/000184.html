@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Question concerning branch-cut algorithm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Question%20concerning%20branch-cut%20algorithm&In-Reply-To=%3C201003010921.08487.andreas.reigber%40dlr.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000185.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Question concerning branch-cut algorithm</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Question%20concerning%20branch-cut%20algorithm&In-Reply-To=%3C201003010921.08487.andreas.reigber%40dlr.de%3E"
+       TITLE="[Radartools-users] Question concerning branch-cut algorithm">andreas.reigber at dlr.de
+       </A><BR>
+    <I>Mon Mar  1 09:21:08 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000185.html">[Radartools-users] getorb on windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#184">[ date ]</a>
+              <a href="thread.html#184">[ thread ]</a>
+              <a href="subject.html#184">[ subject ]</a>
+              <a href="author.html#184">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I am not sure, but as far as I remember, the dipole removal just eliminates 
+residues in adjacent pixels. And I think there is no distance threshold.
+
+The problem is: The branch-cut code is unmaintained and not well tested. It 
+has been implemented long time ago by a student not being an expert in phase 
+unwrapping. I cannot guarantee that everything is 100% perfect. Please feel 
+free to improve it, I would be happy to include it in RAT!
+
+Regards,
+Andreas
+
+
+
+Am Sunday 28 February 2010 12:38:46 schrieb Katharina Spannraft:
+&gt;<i> HI there,
+</I>&gt;<i> I have a question concerning the functioning of the branch-cut algorithm
+</I>&gt;<i> with and without dipole removal.
+</I>&gt;<i>
+</I>&gt;<i> I see the differences in both results (residues integrated in the
+</I>&gt;<i> branch-cuts in the algorithm with dipole removal, while without dipole
+</I>&gt;<i> removal, there are more single residues left in the unwrapped phase).
+</I>&gt;<i>
+</I>&gt;<i> Each branchcut is a dipole, as it is connecting a positive and a negative
+</I>&gt;<i> residue. So what does this &quot;dipole removal&quot; exactly mean? Is there any
+</I>&gt;<i> distance threshold for integrating residues in the branch-cut network?
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance,
+</I>&gt;<i> Kasha
+</I>
+
+
+-- 
+--------------------------------------
+Dr. Andreas Reigber
+Microwaves and Radar Institute
+German Aerospace Center (DLR)
+Tel.: ++49-815328-2360       
+URL:  <A HREF="http://www.dlr.de/hr">http://www.dlr.de/hr</A>   
+--------------------------------------
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000185.html">[Radartools-users] getorb on windows
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#184">[ date ]</a>
+              <a href="thread.html#184">[ thread ]</a>
+              <a href="subject.html#184">[ subject ]</a>
+              <a href="author.html#184">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

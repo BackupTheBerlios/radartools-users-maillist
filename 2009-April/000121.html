@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] help(about rat)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2009-April/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20help%28about%20rat%29&In-Reply-To=%3Cd6a8b87d0904130811g4e0df181n558298a45c7da562%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000120.html">
+   <LINK REL="Next"  HREF="000122.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] help(about rat)</H1>
+    <B>Maxim Neumann</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20help%28about%20rat%29&In-Reply-To=%3Cd6a8b87d0904130811g4e0df181n558298a45c7da562%40mail.gmail.com%3E"
+       TITLE="[Radartools-users] help(about rat)">maxn at cs.tu-berlin.de
+       </A><BR>
+    <I>Mon Apr 13 17:11:20 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000120.html">[Radartools-users] unwrapped interferogram values
+</A></li>
+        <LI>Next message: <A HREF="000122.html">[Radartools-users] RAT processes ENVISAT ASAR AP MODE PRODUCTS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear Qingsong Wang,
+
+you can find the source code of rat e.g. at
+<A HREF="http://srv-43-200.bv.tu-berlin.de/rat/download.php">http://srv-43-200.bv.tu-berlin.de/rat/download.php</A>
+or
+<A HREF="http://svn.berlios.de/wsvn/radartools/trunk/">http://svn.berlios.de/wsvn/radartools/trunk/</A>
+If you want to find out, in which file a certain compiled function is
+located, then you can use the following idl command (e.g. for function
+cc_opt):
+print, routine_info(&quot;cc_opt&quot;,/source,/function)
+if &quot;cc_opt&quot; is a function. If it's a procedure, you have to use
+print, routine_info(&quot;cc_opt&quot;,/source)
+In this case, most of functions you ask for are located in the file
+polinsar/polin_lib.pro:
+<A HREF="http://svn.berlios.de/wsvn/radartools/trunk/polinsar/polin_lib.pro">http://svn.berlios.de/wsvn/radartools/trunk/polinsar/polin_lib.pro</A>
+
+Regards,
+Maxim
+
+
+
+2009/4/13 yilingsql &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/radartools-users">yilingsql at 126.com</A>&gt;
+
+&gt;<i> Dears,
+</I>&gt;<i>  I'm a student majoring in insar and polinsar.  I used RAT a lot in my
+</I>&gt;<i> studys,and it works very well.Now i have some problems occured during
+</I>&gt;<i> application,So I want some advice from you.Exactly the problem is here in
+</I>&gt;<i> polinsar--&gt;coherence optimisation --&gt;single-baseline multiple sms(please
+</I>&gt;<i> refer to the attachment).And the matched procedure is &quot;polin_opt_sb.pro&quot; ,but
+</I>&gt;<i> the function &quot;cc_opt &quot; and &quot; mb_sb&quot; in it can not be found,I know they
+</I>&gt;<i> are compacted in &quot;rat.sav&quot;,could you kindly send the source codes of  the
+</I>&gt;<i> function &quot;cc_opt &quot; and &quot; mb_sb&quot; to me? Also ,I found there are a lot of
+</I>&gt;<i> functions compacted in &quot;rat.sav&quot;,for my further study how can  I get the
+</I>&gt;<i> source codes of them?
+</I>&gt;<i> Many Thanks
+</I>&gt;<i> Yours sincerely
+</I>&gt;<i> Qingsong Wang
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i> &#32593;&#26131;&#37038;&#31665;&#65292;&#20013;&#22269;&#31532;&#19968;&#22823;&#30005;&#23376;&#37038;&#20214;&#26381;&#21153;&#21830; &lt;<A HREF="http://email.163.com">http://email.163.com</A>&gt;
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/radartools-users/attachments/20090413/e4ae15dd/attachment.html">https://lists.berlios.de/pipermail/radartools-users/attachments/20090413/e4ae15dd/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000120.html">[Radartools-users] unwrapped interferogram values
+</A></li>
+	<LI>Next message: <A HREF="000122.html">[Radartools-users] RAT processes ENVISAT ASAR AP MODE PRODUCTS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#121">[ date ]</a>
+              <a href="thread.html#121">[ thread ]</a>
+              <a href="subject.html#121">[ subject ]</a>
+              <a href="author.html#121">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>

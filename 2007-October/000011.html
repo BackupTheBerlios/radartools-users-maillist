@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Radartools-users] Fw:  IDIOT - baseline value problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/radartools-users/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C200710261407.52434.anderl%40fpk.tu-berlin.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000010.html">
+   <LINK REL="Next"  HREF="000012.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Radartools-users] Fw:  IDIOT - baseline value problems</H1>
+    <B>Andreas Reigber</B> 
+    <A HREF="mailto:radartools-users%40lists.berlios.de?Subject=Re%3A%20%5BRadartools-users%5D%20Fw%3A%20%20IDIOT%20-%20baseline%20value%20problems&In-Reply-To=%3C200710261407.52434.anderl%40fpk.tu-berlin.de%3E"
+       TITLE="[Radartools-users] Fw:  IDIOT - baseline value problems">anderl at fpk.tu-berlin.de
+       </A><BR>
+    <I>Fri Oct 26 14:07:52 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000010.html">[Radartools-users] Fw:  IDIOT - baseline value problems
+</A></li>
+        <LI>Next message: <A HREF="000012.html">[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Sven,
+
+&gt;<i> FIRST PAIR (asc) - FULL SCENE: unlike the first time when I wrote to the
+</I>&gt;<i> do you think this could be related to coregistration problems?
+</I>
+Yes and no. The coregistration in idiot is performed entirely using the orbit 
+information and obviously something goes wrong here.
+
+&gt;<i> SECOND PAIR (desc) - FULL SCENE: Idiot stops giving always the same error
+</I>&gt;<i> message (exceeding critical baseline) processing a SAR pair which has a b
+</I>&gt;<i>
+</I>&gt;<i> Something strange happens also when using my Windows partition, where I
+</I>&gt;<i> this OS, my question is: &quot;Is the problem really related to getorb, as I
+</I>&gt;<i> don't use it under Windows?&quot;
+</I>
+This was a good idea, and I think you're right. getorb can't be the problem. 
+So it must be definetly an error in idiot. 
+
+&gt;<i> Last but not least, about sub-scenes: for both SAR pairs and processing
+</I>&gt;<i> them under both Fedora and Windows, Idiot is not able to process data,
+</I>&gt;<i> giving a READU error message and quitting immediately.
+</I>
+As I said, idiot requires standard ENVISAT files. Cropping them usually 
+changes the formating and idiot is not able to use them anymore. This is 
+normal.
+
+&gt;<i> Granted that I can be wrong somewhere using Idiot, do you have more
+</I>&gt;<i> suggestions? If you want (and if you also have time, of course) I could send 
+</I>&gt;<i> you the data of one pair via FTP, just for a test. What do you think?
+</I>
+You should not be able to do something wrong with idiot :-). Its concept is to 
+be totally simple. I think there is a bug somewhere which I should correct. 
+If possible, could you please upload the second pair (the one with 'baseline 
+too large) to our ftp (<A HREF="ftp://ftp.fpk.tu-berlin.de/incoming">ftp://ftp.fpk.tu-berlin.de/incoming</A>) and I'll see what 
+I can do. If you want I can also have a look on the first pair, but maybe 
+lets start with the big problem...
+
+Don't worry about writing email, your input is really important for us!
+
+Greetings,
+Anderl
+
+P.S.: The incoming directory on our ftp is read protected, so nobody can 
+download from there.
+
+
+-- 
+----------------------------------------------------------------
+Dr. Andreas Reigber           Berlin University of Technology
+                              Computer Vision and Remote Sensing
+Tel.: ++49-30-314-23276       Franklinstr. 28/29 (FR3-1)
+Fax.: ++49-30-314-21104       D-10587 Berlin, Germany
+----------------------------------------------------------------
+
+Use encrypted email!                       My key ID: 0x279F93EB
+Fingerprint:   2B60 05A3 1D17 A873 D000 22BE D72C 65CA 279F 93EB
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000010.html">[Radartools-users] Fw:  IDIOT - baseline value problems
+</A></li>
+	<LI>Next message: <A HREF="000012.html">[Radartools-users] Fw:  Fw:  IDIOT - baseline value problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/radartools-users">More information about the Radartools-users
+mailing list</a><br>
+</body></html>
